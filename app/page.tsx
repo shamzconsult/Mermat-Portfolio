@@ -272,7 +272,7 @@ export default function HomePage() {
                   size="lg"
                   className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-8 py-4 text-lg"
                 >
-                  Start Your Project
+                  Contact Us
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
