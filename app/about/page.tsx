@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { Building2, Award, Shield, TrendingUp, Calendar, Menu, X, Target, Globe, Handshake } from "lucide-react"
+import { Building2, Award, Shield, Calendar, Menu, X, Target, Globe, Handshake, Eye } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import Footer from "@/components/Footer"
 
 export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -145,13 +146,12 @@ export default function AboutPage() {
             Pioneering Excellence in
             <span className="bg-gradient-to-r from-red-400 to-white bg-clip-text text-transparent">
               {" "}
-              Nigeria&apos;s Development
+              Nigeria&apos;s Educational Sector
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             Since our establishment in 2023, Mimetic Nigeria Limited has been at the forefront of driving sustainable
-            development through innovative contracting solutions, strategic merchandise trading, and comprehensive human
-            capacity development programs.
+            development through innovative educational services, and human capacity development.
           </p>
         </div>
       </section>
@@ -190,7 +190,7 @@ export default function AboutPage() {
                   <Separator className="bg-white/10" />
                   <div>
                     <p className="text-sm text-gray-400">Principal Business Activity</p>
-                    <p className="font-semibold">General Contract and Merchandise</p>
+                    <p className="font-semibold">Educational services, Human capacity development, General Contract and Merchandise</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Head Office</p>
@@ -204,48 +204,53 @@ export default function AboutPage() {
               </Card>
             </div>
 
-            <div className="space-y-6">
+           <div className="space-y-6">
               <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
                 <CardHeader>
                   <CardTitle className="text-white flex items-center">
-                    <TrendingUp className="h-6 w-6 mr-2 text-red-400" />
-                    Share Capital Structure
+                    <Award className="h-6 w-6 mr-2 text-red-400" />
+                    Why Choose Mimetic Nigeria Limited
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-gray-300">
                   <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span>Share Class</span>
-                      <Badge className="bg-red-500/20 text-red-300 border-red-500/30">Ordinary</Badge>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Proven Track Record</h4>
+                        <p className="text-sm">
+                          Consistent delivery of high-quality projects across Nigeria with 100% client satisfaction
+                          rate.
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span>Nominal Value per Share</span>
-                      <span className="font-semibold">₦1.00</span>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Expert Team</h4>
+                        <p className="text-sm">
+                          Highly qualified professionals with extensive experience in contracting and educational
+                          development.
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span>Total Issued Shares</span>
-                      <span className="font-semibold">1,000,000</span>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Innovation Focus</h4>
+                        <p className="text-sm">
+                          Leveraging cutting-edge technology and modern methodologies to deliver superior results.
+                        </p>
+                      </div>
                     </div>
-                    <Separator className="bg-white/10" />
-                    <div className="flex justify-between items-center text-lg">
-                      <span className="font-semibold">Total Share Capital</span>
-                      <span className="font-bold text-red-400">₦1,000,000</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-white rounded-full flex items-center justify-center">
-                      <Award className="h-6 w-6 text-red-900" />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold">Certified & Compliant</h3>
-                      <p className="text-gray-300 text-sm">
-                        Fully registered and compliant with Nigerian corporate regulations and international standards.
-                      </p>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Comprehensive Solutions</h4>
+                        <p className="text-sm">
+                          End-to-end services from planning to execution, ensuring seamless project delivery.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -272,7 +277,7 @@ export default function AboutPage() {
             <Card className="bg-white/5 border-white/20 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-white flex items-center text-2xl">
-                  <Globe className="h-8 w-8 mr-3 text-white" />
+                  <Eye className="h-8 w-8 mr-3 text-red-400" />
                   Our Vision
                 </CardTitle>
               </CardHeader>
@@ -354,7 +359,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Partner with Nigeria&apos;s Most Trusted Development Company
+              Partner with Nigeria&apos;s Trusted Human Capacity Company
             </h2>
             <p className="text-xl text-gray-300 mb-8">
               Join hundreds of satisfied clients who have experienced the Mimetic difference in quality, reliability,
@@ -384,109 +389,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black/40 backdrop-blur-sm border-t border-white/10 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-white rounded-lg flex items-center justify-center">
-                  <Building2 className="h-6 w-6 text-red-900" />
-                </div>
-                <span className="text-xl font-bold text-white">MIMETIC</span>
-              </Link>
-              <p className="text-gray-400">
-                Building Nigeria&apos;s future through excellence in contracting, merchandise, and human capacity
-                development.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-white font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/services" className="hover:text-white transition-colors">
-                    General Contracting
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="hover:text-white transition-colors">
-                    Merchandise Trading
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="hover:text-white transition-colors">
-                    Capacity Development
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="hover:text-white transition-colors">
-                    Educational Services
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-white font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/about" className="hover:text-white transition-colors">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/leadership" className="hover:text-white transition-colors">
-                    Leadership
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
-                    News & Updates
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-white font-semibold mb-4">Legal</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/about" className="hover:text-white transition-colors">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="hover:text-white transition-colors">
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="hover:text-white transition-colors">
-                    Compliance
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="hover:text-white transition-colors">
-                    Certifications
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Mimetic Nigeria Limited. All rights reserved.
-            </p>
-            <p className="text-gray-400 text-sm">Registration Number: 6964866 | RC: 6964866</p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   )
 }
