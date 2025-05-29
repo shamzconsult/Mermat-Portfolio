@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
-  Building2,
   Users,
   Calendar,
   CheckCircle,
   ArrowRight,
-  Award,
   Target,
   Globe,
   UsersRoundIcon,
   Eye,
+  Handshake,
+  Combine,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -32,24 +32,24 @@ export default function HomePage() {
 
   const features = [
     {
-      icon: Building2,
-      title: "Infrastructure Excellence",
-      description: "Leading construction and development projects across Nigeria with unmatched quality standards.",
+      icon: Handshake,
+      title: "Strategic Collaborations",
+      description: "We have a wide range of strategic partnership deal with champions in the educational sector such as Government Agencies, Accredited Institutions and private organizations.",
     },
     {
       icon: Globe,
-      title: "Educational Impact",
-      description: "Empowering communities through comprehensive educational and capacity development programs.",
+      title: "Educational Innovation",
+      description: "We employ innovation in the delivery of our educational support and capacity building services through the application of cutting edge technologies.",
     },
     {
       icon: Target,
-      title: "Strategic Partnerships",
-      description: "Building lasting relationships with institutions and organizations for sustainable growth.",
+      title: "Human Capital Development",
+      description: "We offer a wide array human capital development services ranging from technical skills training, entrepreneurial development skills, career support and mentorship services among others.",
     },
     {
-      icon: Award,
-      title: "Proven Track Record",
-      description: "Delivering exceptional results with full regulatory compliance and industry recognition.",
+      icon: Combine,
+      title: "Multi-Sector Capabilities",
+      description: "Our capacity as an organization transcends capacity development, to this end, we are knowledgeable in executing jobs in general contracting, procurement, logistics, and inter-agency services.",
     },
   ]
 
@@ -92,7 +92,7 @@ export default function HomePage() {
                 </h1>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  Leading provider of comprehensive human capacity development
+                  Nurturing Human Potential, Leading provider of comprehensive human capital development
                   services. Empowering individuals, institutions, and communities across Nigeria through education and
                   innovation.
                 </p>
@@ -170,8 +170,7 @@ export default function HomePage() {
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Driving Excellence Across Industries</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From infrastructure development to educational advancement, we deliver comprehensive solutions that create
-              lasting impact across Nigeria.
+              We are a private Nigerian company focused on human capacity development, educational services, research and development and general educational consultancy and Advisory services. 
             </p>
           </div>
 
@@ -202,9 +201,7 @@ export default function HomePage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-gray-300 text-lg leading-relaxed">
-                  To empower individuals and institutions through technical skills training, educational support,
-                  research, and development partnerships, enabling personal growth and sustainable development while
-                  delivering exceptional contracting and merchandise solutions that drive Nigeria&apos;s economic progress.
+                 To empower individuals and institutions through technical skills training, educational support services, research, and development and  partnerships that will enhance personal growth and organizational development.
                 </CardContent>
               </Card>
   
@@ -216,9 +213,7 @@ export default function HomePage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-gray-300 text-lg leading-relaxed">
-                  To be Nigeria&apos;s leading provider of comprehensive human capacity development and educational services
-                  that foster job readiness, entrepreneurship, and educational advancement, while maintaining excellence
-                  in contracting and merchandise trading across West Africa.
+                 A leading provider of comprehensive human capital development and educational services that foster job readiness, entrepreneurship, and educational advancement in Nigeria and beyond.
                 </CardContent>
               </Card>
             </div>

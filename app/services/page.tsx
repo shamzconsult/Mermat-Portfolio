@@ -374,12 +374,13 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-5 gap-8">
             {[
               { step: "01", title: "Consultation", description: "Understanding your needs and objectives" },
               { step: "02", title: "Planning", description: "Developing comprehensive project strategies" },
               { step: "03", title: "Execution", description: "Implementing solutions with precision" },
-              { step: "04", title: "Delivery", description: "Ensuring quality results and ongoing support" },
+              { step: "04", title: "Evaluation", description: "Evaluating quality results" },
+              { step: "05", title: "Delivery", description: "Ensuring quality results and ongoing support" },
             ].map((process, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-white rounded-full flex items-center justify-center mx-auto mb-4">

@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Building2, Menu, X, Phone, Mail, MapPin, Clock, Send, MessageSquare, ArrowRight } from "lucide-react"
+import { Building2, Menu, X, Phone, Mail, MapPin, Clock, Send, MessageSquare, ArrowRight, ChevronDown } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/Footer"
@@ -23,6 +23,8 @@ export default function ContactPage() {
     service: "",
     message: "",
   })
+
+    const [faqOpenStates, setFaqOpenStates] = useState(Array(6).fill(false))
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -51,12 +53,12 @@ export default function ContactPage() {
       details: ["safiyabelo@yahoo.com", "info@mimeticnigeria.com"],
       description: "We respond within 24 hours",
     },
-    {
-      icon: MapPin,
-      title: "Head Office",
-      details: ["7th Avenue, Gwarimpa II", "Abuja, FCT, Nigeria"],
-      description: "Visit us during business hours",
-    },
+    // {
+    //   icon: MapPin,
+    //   title: "Head Office",
+    //   details: ["7th Avenue, Gwarimpa II", "Abuja, FCT, Nigeria"],
+    //   description: "Visit us during business hours",
+    // },
     {
       icon: Clock,
       title: "Business Hours",
@@ -73,18 +75,21 @@ export default function ContactPage() {
       email: "abuja@mimeticnigeria.com",
     },
     {
-      city: "Lagos (Branch Office)",
-      address: "Victoria Island, Lagos State",
+      city: "Bauchi (Branch Office)",
+      address: "Victoria Island, Bauchi State",
       phone: "+234 (0) 987 654 3210",
-      email: "lagos@mimeticnigeria.com",
+      email: "bauchi@mimeticnigeria.com",
     },
-    {
-      city: "Port Harcourt (Regional Office)",
-      address: "GRA Phase II, Port Harcourt, Rivers State",
-      phone: "+234 (0) 555 123 4567",
-      email: "portharcourt@mimeticnigeria.com",
-    },
+    
   ]
+
+  const toggleFaq = (index: number) => {
+    setFaqOpenStates((prev) => {
+      const newStates = [...prev]
+      newStates[index] = !newStates[index]
+      return newStates
+    })
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-950 to-slate-900">
@@ -173,7 +178,7 @@ export default function ContactPage() {
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             Ready to transform your vision into reality? Our team of experts is here to help you achieve your goals
-            through innovative solutions and exceptional service.
+            through innovative solutions and exceptional services.
           </p>
         </div>
       </section>
@@ -263,7 +268,7 @@ export default function ContactPage() {
                         Merchandise Trading
                       </option>
                       <option value="capacity-development" className="bg-slate-800">
-                        Human Capacity Development
+                        Human Capital Development
                       </option>
                       <option value="educational-services" className="bg-slate-800">
                         Educational Services
@@ -345,7 +350,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {offices.map((office, index) => (
               <Card
                 key={index}
@@ -390,46 +395,88 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                question: "What types of projects do you handle?",
-                answer:
-                  "We handle a wide range of projects including commercial construction, residential development, infrastructure projects, educational programs, and merchandise trading operations across Nigeria.",
-              },
-              {
-                question: "How do you ensure project quality?",
-                answer:
-                  "We maintain strict quality control measures, employ certified professionals, use premium materials, and follow international standards while ensuring full compliance with Nigerian regulations.",
-              },
-              {
-                question: "What is your typical project timeline?",
-                answer:
-                  "Project timelines vary based on scope and complexity. We provide detailed project schedules during the planning phase and maintain regular communication throughout the project lifecycle.",
-              },
-              {
-                question: "Do you offer training and development programs?",
-                answer:
-                  "Yes, we provide comprehensive human capacity development programs, technical skills training, educational support, and career mentoring services for individuals and institutions.",
-              },
-              {
-                question: "How can I get a project quote?",
-                answer:
-                  "Contact us through our form above, email, or phone. We'll schedule a consultation to understand your needs and provide a detailed proposal within 48-72 hours.",
-              },
-              {
-                question: "Do you work with international partners?",
-                answer:
-                  "Yes, we collaborate with international institutions and organizations to bring global best practices and innovative solutions to our Nigerian clients.",
-              },
-            ].map((faq, index) => (
-              <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-white font-semibold mb-3">{faq.question}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="flex flex-wrap gap-8">
+            <div className="flex-1 min-w-0 md:min-w-[calc(50%-1rem)] space-y-6">
+              {[
+                {
+                  question: "What types of projects do you handle?",
+                  answer:
+                    "We handle a wide range of projects including commercial construction, residential development, infrastructure projects, educational programs, and merchandise trading operations across Nigeria.",
+                },
+                {
+                  question: "How do you ensure project quality?",
+                  answer:
+                    "We maintain strict quality control measures, employ certified professionals, use premium materials, and follow international standards while ensuring full compliance with Nigerian regulations.",
+                },
+                {
+                  question: "What is your typical project timeline?",
+                  answer:
+                    "Project timelines vary based on scope and complexity. We provide detailed project schedules during the planning phase and maintain regular communication throughout the project lifecycle.",
+                },
+              ].map((faq, index) => (
+                <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm">
+                  <CardContent className="p-0">
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                    >
+                      <h3 className="text-white font-semibold">{faq.question}</h3>
+                      <ChevronDown
+                        className={`h-5 w-5 text-red-400 transition-transform duration-200 ${
+                          faqOpenStates[index] ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {faqOpenStates[index] && (
+                      <div className="px-6 pb-6">
+                        <p className="text-gray-400 text-sm leading-relaxed">{faq.answer}</p>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="flex-1 min-w-0 md:min-w-[calc(50%-1rem)] space-y-6">
+              {[
+                {
+                  question: "Do you offer training and development programs?",
+                  answer:
+                    "Yes, we provide comprehensive human capacity development programs, technical skills training, educational support, and career mentoring services for individuals and institutions.",
+                },
+                {
+                  question: "How can I get a project quote?",
+                  answer:
+                    "Contact us through our form above, email, or phone. We'll schedule a consultation to understand your needs and provide a detailed proposal within 48-72 hours.",
+                },
+                {
+                  question: "Do you work with international partners?",
+                  answer:
+                    "Yes, we collaborate with international institutions and organizations to bring global best practices and innovative solutions to our Nigerian clients.",
+                },
+              ].map((faq, index) => (
+                <Card key={index + 3} className="bg-white/5 border-white/10 backdrop-blur-sm">
+                  <CardContent className="p-0">
+                    <button
+                      onClick={() => toggleFaq(index + 3)}
+                      className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                    >
+                      <h3 className="text-white font-semibold">{faq.question}</h3>
+                      <ChevronDown
+                        className={`h-5 w-5 text-red-400 transition-transform duration-200 ${
+                          faqOpenStates[index + 3] ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {faqOpenStates[index + 3] && (
+                      <div className="px-6 pb-6">
+                        <p className="text-gray-400 text-sm leading-relaxed">{faq.answer}</p>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

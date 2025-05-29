@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { Building2, Award, Shield, Calendar, Menu, X, Target, Globe, Handshake, Eye } from "lucide-react"
+import { Building2, Award, Shield, Calendar, Menu, X, Target, Globe, Handshake, Eye, BicepsFlexed } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/Footer"
@@ -42,25 +42,31 @@ export default function AboutPage() {
       icon: Shield,
       title: "Integrity",
       description:
-        "We conduct business with the highest ethical standards, ensuring transparency and accountability in all our operations.",
+        "We do what is right. Trust is the foundation of how we operate, and we are committed to being transparent, responsible, and fair in all our dealings.",
     },
     {
       icon: Award,
       title: "Excellence",
       description:
-        "We strive for excellence in every project, delivering quality results that exceed expectations and industry standards.",
+        "From the quality of our training to the delivery of our services, we pursue excellence — not because it is easy, but because it matters.",
     },
     {
       icon: Handshake,
-      title: "Partnership",
+      title: "Collaboration",
       description:
-        "We believe in building lasting relationships with clients, stakeholders, and communities for mutual growth and success.",
+        "Whether it is with students, clients, partners, or institutions, we value relationships built on mutual respect, shared goals, and honest communication.",
     },
     {
       icon: Globe,
       title: "Innovation",
       description:
-        "We embrace innovative solutions and technologies to drive progress and create sustainable impact across all sectors.",
+        "We do not just follow trends, we create better ways to teach, learn, and grow. We embrace creativity and smart thinking to make education and training more practical and impactful.",
+    },
+    {
+      icon: BicepsFlexed,
+      title: "Empowerment",
+      description:
+        "We believe in people. That is why we dedicate ourselves to helping individuals unlock their potential — with the right skills, mindset, and support.",
     },
   ]
 
@@ -151,7 +157,7 @@ export default function AboutPage() {
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             Since our establishment in 2023, Mimetic Nigeria Limited has been at the forefront of driving sustainable
-            development through innovative educational services, and human capacity development.
+            development through innovative educational services, and human capital development.
           </p>
         </div>
       </section>
@@ -190,7 +196,7 @@ export default function AboutPage() {
                   <Separator className="bg-white/10" />
                   <div>
                     <p className="text-sm text-gray-400">Principal Business Activity</p>
-                    <p className="font-semibold">Educational services, Human capacity development, General Contract and Merchandise</p>
+                    <p className="font-semibold">Educational services, Human capital development, General Contract and Merchandise</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Head Office</p>
@@ -268,9 +274,7 @@ export default function AboutPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-gray-300 text-lg leading-relaxed">
-                To empower individuals and institutions through technical skills training, educational support,
-                research, and development partnerships, enabling personal growth and sustainable development while
-                delivering exceptional contracting and merchandise solutions that drive Nigeria&apos;s economic progress.
+                To empower individuals and institutions through technical skills training, educational support services, research, and development and  partnerships that will enhance personal growth and organizational development.
               </CardContent>
             </Card>
 
@@ -282,9 +286,7 @@ export default function AboutPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-gray-300 text-lg leading-relaxed">
-                To be Nigeria&apos;s leading provider of comprehensive human capacity development and educational services
-                that foster job readiness, entrepreneurship, and educational advancement, while maintaining excellence
-                in contracting and merchandise trading across West Africa.
+                A leading provider of comprehensive human capital development and educational services that foster job readiness, entrepreneurship, and educational advancement in Nigeria and beyond.
               </CardContent>
             </Card>
           </div>
@@ -301,7 +303,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <Card
                 key={index}
@@ -359,10 +361,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Partner with Nigeria&apos;s Trusted Human Capacity Company
+              Partner with Nigeria&apos;s Trusted Human Capital Company
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Join hundreds of satisfied clients who have experienced the Mimetic difference in quality, reliability,
+              Join an array of satisfied clients who have experienced the Mimetic difference in quality, reliability,
               and innovative solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

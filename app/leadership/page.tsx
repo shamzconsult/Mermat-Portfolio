@@ -43,23 +43,23 @@ export default function LeadershipPage() {
 
   const boardMembers = [
     {
-      name: "Dr. Amina Hassan",
+      name: "Dr. Baliqees",
       role: "Advisory Board Member",
       expertise: ["Educational Policy", "Research & Development"],
       experience: "20+ years in Educational Leadership",
     },
     {
-      name: "Engr. Ibrahim Musa",
-      role: "Technical Advisor",
+      name: "Mr. Shamsudeem Aderoju",
+      role: "Program Development Advisor",
       expertise: ["Construction Management", "Infrastructure Development"],
-      experience: "18+ years in Engineering & Construction",
+      experience: "18+ years in Programs Co-ordination",
     },
-    {
-      name: "Mrs. Fatima Aliyu",
-      role: "Business Development Advisor",
-      expertise: ["Strategic Partnerships", "Market Expansion"],
-      experience: "14+ years in Business Development",
-    },
+    // {
+    //   name: "Mrs. Fatima Aliyu",
+    //   role: "Business Development Advisor",
+    //   expertise: ["Strategic Partnerships", "Market Expansion"],
+    //   experience: "14+ years in Business Development",
+    // },
   ]
 
   return (
@@ -250,7 +250,7 @@ export default function LeadershipPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {boardMembers.map((member, index) => (
               <Card
                 key={index}
