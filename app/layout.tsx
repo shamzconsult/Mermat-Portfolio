@@ -9,7 +9,7 @@ const montserrat = Montserrat({
 
 
 export const metadata: Metadata = {
-  title: 'Mermat Nigeria Limited',
+  title: 'Mimetic Nigeria Limited',
   description: 'Streamline operations, boost revenue, and delight your customers with our comprehensive contracting and merchandise solutions across Nigeria',
 }
 
