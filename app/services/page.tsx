@@ -7,8 +7,6 @@ import { Badge } from "@/components/ui/badge"
 import {
   Building2,
   Users,
-  Shield,
-  TrendingUp,
   Calendar,
   CheckCircle,
   Menu,
@@ -19,6 +17,9 @@ import {
   GraduationCap,
   Factory,
   ArrowRight,
+  Building,
+  Search,
+  Heart,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -27,35 +28,92 @@ import Footer from "@/components/Footer"
 export default function ServicesPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const mainServices = [
+   const mainServices = [
+    {
+      icon: Users,
+      title: "Human Capacity Development Services",
+      description:
+        "Technical and professional development skills training services that promotes job readiness, business startup, and development.",
+      features: [
+        "Technical Skills Training",
+        "Professional Development Programs",
+        "Job Readiness Preparation",
+        "Business Startup Training",
+        "Entrepreneurship Development",
+      ],
+      image: "/images/Human-capacity.png",
+    },
+    {
+      icon: BookOpen,
+      title: "Educational and Career Mentoring Services",
+      description:
+        "Multi-sectorial research and development services that enhance educational and career development opportunities.",
+      features: [
+        "Career Development Guidance",
+        "Research & Development Services",
+        "Multi-sectorial Consulting",
+        "Organizational Growth Support",
+        "Professional Mentoring Programs",
+      ],
+      image: "/images/Educational-career.png",
+    },
+    {
+      icon: Factory,
+      title: "Educational Materials and Infrastructure Supply",
+      description:
+        "Bespoke materials and infrastructure that improves learning and research to enhance organizational growth and development.",
+      features: [
+        "Educational Materials Supply",
+        "Learning Infrastructure Development",
+        "Research Equipment Provision",
+        "Customized Learning Solutions",
+        "Organizational Development Support",
+      ],
+      image: "/images/Educational-materials.png",
+    },
+    {
+      icon: GraduationCap,
+      title: "Vocational & Technical Learning Centers",
+      description:
+        "Creating franchise or study centers for regular or specialized educational programs including external examinations preparation.",
+      features: [
+        "Learning Center Establishment",
+        "External Examination Preparation",
+        "Technical Skills Training Centers",
+        "Vocational Education Programs",
+        "Specialized Education Centers",
+      ],
+      image: "/images/Vocational-technical.png",
+    },
+    {
+      icon: Calendar,
+      title: "Educational Advocacy Services",
+      description:
+        "Educational development advocacy through debates, lectures, exhibitions, outdoor events, public meetings, and conferences.",
+      features: [
+        "Educational Conferences",
+        "Public Lectures & Debates",
+        "Educational Exhibitions",
+        "Outdoor Educational Events",
+        "Professional Development Seminars",
+      ],
+      image: "/images/study-group-african-people.jpg",
+    },
     {
       icon: Building2,
-      title: "General Contracting",
-      description: "Comprehensive construction and infrastructure development services across Nigeria",
+      title: "General Contracting Services",
+      description:
+        "Comprehensive contracting services including logistics, procurement, curriculum development.",
       features: [
-        "Commercial & Residential Construction",
-        "Infrastructure Development",
-        "Project Management",
-        "Quality Assurance & Control",
-        "Regulatory Compliance",
+        "Logistics Services",
+        "Procurement Management",
+        "Curriculum Development",
+        "Educational Events Management",
+        "Educational Development Activities",
       ],
-      image: "/images/construction-engineer.jpg",
-    },
-    {
-      icon: TrendingUp,
-      title: "Merchandise Trading",
-      description: "Strategic trading and distribution of quality merchandise and commercial goods",
-      features: [
-        "Import & Export Services",
-        "Supply Chain Management",
-        "Quality Product Sourcing",
-        "Distribution Networks",
-        "Market Analysis",
-      ],
-      image: "/images/cyber-monday-shopping-sales.jpg",
+      image: "/images/General-contracting.png",
     },
   ]
-
   const educationalServices = [
     {
       icon: Users,
@@ -121,30 +179,46 @@ export default function ServicesPage() {
 
   const targetAudiences = [
     {
-      icon: GraduationCap,
-      title: "Students & Youth",
+      icon: Building,
+      title: "Government Agencies",
       description:
-        "Technical/vocational education, job readiness skills, career mentoring, and business startup preparation.",
-      services: ["Vocational Training", "Career Guidance", "Entrepreneurship Programs", "Skill Development"],
+        "We partner with ministries, departments and public sector institutions to implement training programs, educational initiatives, youth development strategies, and research-based policy support.",
     },
     {
-      icon: Building2,
+      icon: Search,
+      title: "Research Institutions and Institutes",
+      description:
+        "We collaborate with research organizations to provide training in research methods, data interpretation, and the design of practical, community-impact-driven projects.",
+    },
+    {
+      icon: GraduationCap,
       title: "Educational Institutions",
       description:
-        "Schools, colleges, and training institutes needing infrastructure support and curriculum collaboration.",
-      services: ["Infrastructure Development", "Curriculum Support", "Faculty Training", "Technology Integration"],
+        "From primary schools to tertiary institutions and training centers, we support education providers with infrastructure setup, study center operations, and curriculum enhancement.",
+    },
+    {
+      icon: Handshake,
+      title: "NGOs and Development Organizations",
+      description:
+        "We work alongside development partners and non-profits to co-create community education initiatives, skill empowerment programs, and public enlightenment campaigns.",
     },
     {
       icon: Briefcase,
-      title: "Job Seekers & Entrepreneurs",
-      description: "Skills development for employment opportunities and business launch/management support.",
-      services: ["Employment Training", "Business Development", "Mentorship Programs", "Market Access"],
+      title: "Private Organizations",
+      description:
+        "Whether you're an SME or a large enterprise, we provide training, business development support, talent readiness programs, and supply services tailored to your organizational needs.",
     },
     {
-      icon: Shield,
-      title: "Organizations & Research Bodies",
-      description: "Training in research methods, educational consulting, and capacity development projects.",
-      services: ["Research Training", "Consulting Services", "Capacity Building", "Project Management"],
+      icon: Users,
+      title: "Youth and Students",
+      description:
+        "Our heartbeat. We help young people access job-readiness skills, technical and vocational education, entrepreneurial mentorship, and career guidance.",
+    },
+    {
+      icon: Heart,
+      title: "High Net-Worth Individuals (HNWIs)",
+      description:
+        "For individuals passionate about giving back or building educational impact, we offer partnership opportunities in CSR, scholarship schemes, and strategic philanthropic ventures.",
     },
   ]
 
@@ -241,13 +315,14 @@ export default function ServicesPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Core Business Services</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Core Services</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our primary business operations focused on infrastructure development and strategic commerce.
+              Comprehensive educational development and contracting solutions designed to empower individuals,
+              organizations, and communities across Nigeria.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {mainServices.map((service, index) => (
               <Card
                 key={index}
@@ -276,10 +351,10 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                   </div>
-                  <Button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  <div>
+
+                  </div>
+                  
                 </CardContent>
               </Card>
             ))}
@@ -329,37 +404,44 @@ export default function ServicesPage() {
       </section>
 
       {/* Target Audiences */}
-      <section className="py-20">
+       <section className="py-20 bg-black/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Who We Serve</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our diverse range of services caters to various sectors and audiences across Nigeria.
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Target Audiences</h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+              At Mimetic Nigeria Limited, our work touches diverse sectors of society — from policy to people,
+              institutions to individuals. Here&apos;s who we proudly serve:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {targetAudiences.map((audience, index) => (
               <Card
                 key={index}
                 className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
               >
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-red-500/20 to-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <CardContent className="p-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-500/20 to-white/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <audience.icon className="h-8 w-8 text-red-400" />
                   </div>
-                  <h3 className="text-white font-semibold mb-3">{audience.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{audience.description}</p>
-                  <div className="space-y-1">
+                  <h3 className="text-white font-semibold mb-3 text-lg">{audience.title}</h3>
+                  <p className="text-gray-400 text-sm mb-4 leading-relaxed">{audience.description}</p>
+                  {/* <div className="space-y-1">
                     {audience.services.map((service, idx) => (
                       <Badge key={idx} variant="outline" className="text-xs border-red-500/30 text-red-300 mr-1 mb-1">
                         {service}
                       </Badge>
                     ))}
-                  </div>
+                  </div> */}
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-300 text-lg italic">
+              &ldquo;Together, we work toward national development goals and sustainable impact across all sectors.&rdquo;
+            </p>
           </div>
         </div>
       </section>
