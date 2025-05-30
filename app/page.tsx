@@ -90,9 +90,10 @@ export default function HomePage() {
                   <span className="bg-gradient-to-r from-red-400 to-white bg-clip-text text-transparent"> Future </span>
                   Together
                 </h1>
+                <p className="text-gray-400 italic">Nurturing Human Potential.......</p>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  Nurturing Human Potential, Leading provider of comprehensive human capital development
+                  Leading provider of comprehensive human capital development
                   services. Empowering individuals, institutions, and communities across Nigeria through education and
                   innovation.
                 </p>
