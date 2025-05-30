@@ -131,7 +131,7 @@ export default function LeadershipPage() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/view-dramatic-chess-pieces-with-man.jpg"
+            src="/images/leadership-hero.png"
             alt="Leadership Team"
             fill
             className="object-cover opacity-20"

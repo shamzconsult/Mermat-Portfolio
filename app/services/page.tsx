@@ -289,7 +289,7 @@ export default function ServicesPage() {
       <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/african-business-male-people-shaking-hands.jpg"
+            src="/images/service-hero.png"
             alt="Our Services"
             fill
             className="object-cover opacity-20"

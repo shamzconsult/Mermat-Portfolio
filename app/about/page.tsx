@@ -137,7 +137,7 @@ export default function AboutPage() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/smiling-architects-looking-blueprint.jpg"
+            src="/images/About-hero.png"
             alt="About Mimetic Nigeria"
             fill
             className="object-cover opacity-20"
