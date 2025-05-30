@@ -61,13 +61,13 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+234 (0) 123 456 7890", "+234 (0) 987 654 3210"],
+      details: ["+2348034395365"],
       description: "Available Monday to Friday, 8:00 AM - 6:00 PM",
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["safiyabelo@yahoo.com", "mimeticnigerialimited@gmail.com"],
+      details: [ "mimeticnigerialimited@gmail.com"],
       description: "We respond within 24 hours",
     },
     // {

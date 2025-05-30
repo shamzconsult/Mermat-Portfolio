@@ -206,11 +206,11 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Head Office</p>
-                    <p className="font-semibold">7th Avenue, Gwarimpa II, Abuja, FCT</p>
+                    <p className="font-semibold">No. 27, 7th Avenue, Gwarimpa II, Abuja, FCT</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="font-semibold">safiyabelo@yahoo.com</p>
+                    <p className="font-semibold">mimeticnigerialimited@gmail.com</p>
                   </div>
                 </CardContent>
               </Card>

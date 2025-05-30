@@ -14,7 +14,7 @@ export default function LeadershipPage() {
 
   const directors = [
     {
-      name: "Abdullahi Tiffi Bello",
+      name: "Dr. Abdullahi Bello Tiffi",
       role: "Director",
       email: "tiffibelo@gmail.com",
       location: "Bauchi State",
@@ -28,7 +28,7 @@ export default function LeadershipPage() {
       image: "/images/Abdullahi_Tiffi.webp", 
     },
     {
-      name: "Safiya Tiffi-Lamorde Bello",
+      name: "Safiya Bello Tiffi-Lamorde",
       role: "Managing Director/Chief Executive Officer",
       email: "safiyabelo@yahoo.com",
       location: "Abuja, FCT",
@@ -45,7 +45,7 @@ export default function LeadershipPage() {
 
   const boardMembers = [
     {
-      name: "Dr. Baliqees",
+      name: "Dr. Baliqees Bello Tiffi",
       role: "Advisory Board Member",
       expertise: ["Educational Policy", "Research & Development"],
       experience: "20+ years in Educational Leadership",
