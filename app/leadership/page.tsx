@@ -25,10 +25,11 @@ export default function LeadershipPage() {
       expertise: ["Strategic Planning", "Business Development", "Operations Management", "Stakeholder Relations"],
       education: "Bachelor's in Business Administration",
       bio: "Abdullahi brings over 15 years of extensive experience in business development and strategic planning. His leadership has been instrumental in establishing Mimetic Nigeria Limited as a trusted partner in the contracting and development sector.",
+      image: "/images/Abdullahi_Tiffi.webp", 
     },
     {
       name: "Safiya Tiffi-Lamorde Bello",
-      role: "Director",
+      role: "Managing Director/Chief Executive Officer",
       email: "safiyabelo@yahoo.com",
       location: "Abuja, FCT",
       appointmentDate: "12 MAY 2023",
@@ -38,6 +39,7 @@ export default function LeadershipPage() {
       expertise: ["Educational Development", "Human Resources", "Project Management", "Community Relations"],
       education: "Master's in Educational Management",
       bio: "Safiya is a visionary leader with a passion for educational development and human capacity building. Her expertise in educational management drives our commitment to empowering individuals and institutions across Nigeria.",
+      image: "/images/Safiya_picture.webp", 
     },
   ]
 
@@ -170,8 +172,26 @@ export default function LeadershipPage() {
               >
                 <CardHeader>
                   <div className="flex items-start space-x-6">
-                    <div className="w-24 h-24 bg-gradient-to-r from-red-500 to-white rounded-full flex items-center justify-center flex-shrink-0">
-                      <Users className="h-12 w-12 text-red-900" />
+                    <div className="relative w-32 h-32 flex-shrink-0">
+                      <Image
+                        src={director.image || "/placeholder.svg"}
+                        alt={director.name}
+                        fill
+                        className="object-cover rounded-full border-4 border-gradient-to-r from-red-500 to-white"
+                        style={{
+                          borderImage: "linear-gradient(45deg, #ef4444, #ffffff) 1",
+                        }}
+                      />
+                      <div className="absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-r from-red-500 to-white p-1">
+                        <div className="w-full h-full rounded-full overflow-hidden">
+                          <Image
+                            src={director.image || "/placeholder.svg"}
+                            alt={director.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      </div>
                     </div>
                     <div className="flex-1">
                       <CardTitle className="text-white text-2xl mb-2">{director.name}</CardTitle>

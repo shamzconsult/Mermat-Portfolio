@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { FormEvent, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -13,19 +13,29 @@ import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/Footer"
 
+interface ContactFormData {
+  name: string,
+  email: string,
+  phoneNumber: string,
+  company: string,
+  service: string,
+  message: string,
+}
+
 export default function ContactPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [formData, setFormData] = useState({
+   const [showFallback, setShowFallback] = useState(false);
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
-    phone: "",
+    phoneNumber: "",
     company: "",
     service: "",
     message: "",
   })
+  const mailtoRef = useRef<HTMLAnchorElement>(null);
 
-    const [faqOpenStates, setFaqOpenStates] = useState(Array(6).fill(false))
-
+  const [faqOpenStates, setFaqOpenStates] = useState(Array(6).fill(false))
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
@@ -34,12 +44,19 @@ export default function ContactPage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-  }
+   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { name, email, phoneNumber, company, service, message } = formData;
+    const subject = encodeURIComponent("Contact Request from Website");
+    const body = encodeURIComponent(
+      `**Contact Request**\n\n` +
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phoneNumber}\n` +
+      `Company: ${company}\nService: ${service}\n\nMessage:\n${message}`
+    );
+    window.location.href = `mailto:mimeticnigerialimited@gmail.com?subject=${subject}&body=${body}`;
 
+    setShowFallback(true);
+  };
   const contactInfo = [
     {
       icon: Phone,
@@ -50,7 +67,7 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email",
-      details: ["safiyabelo@yahoo.com", "info@mimeticnigeria.com"],
+      details: ["safiyabelo@yahoo.com", "mimeticnigerialimited@gmail.com"],
       description: "We respond within 24 hours",
     },
     // {
@@ -230,8 +247,8 @@ export default function ContactPage() {
                       <label className="block text-white text-sm font-medium mb-2">Phone Number</label>
                       <Input
                         type="tel"
-                        name="phone"
-                        value={formData.phone}
+                        name="phoneNumber"
+                        value={formData.phoneNumber}
                         onChange={handleInputChange}
                         className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                         placeholder="+234 (0) 123 456 7890"
@@ -299,6 +316,46 @@ export default function ContactPage() {
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
+
+                {/* Hidden mailto anchor */}
+                <a ref={mailtoRef} style={{ display: "none" }}>
+                  Mail
+                </a>
+
+                {/* Fallback message and Gmail link */}
+                {showFallback && (
+                  <div className='mt-4 p-4 bg-yellow-50 border border-yellow-300 rounded text-yellow-900 text-sm'>
+                    <p>
+                      <strong>If your email client did not open:</strong>
+                    </p>
+                    <ul className='list-disc ml-5'>
+                      <li>
+                        You can{" "}
+                        <a
+                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=mimeticnigerialimited@gmail.com&su=Contact%20Request%20from%20Website&body=${encodeURIComponent(
+                            `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phoneNumber}\nWhich company are you reaching us from?: ${formData.company}\nService Interested In:**\n${formData.service || "Not specified"}\n\nPlease provide more context here: ${formData.message}`
+                          )}`}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='underline text-blue-700'
+                        >
+                          send us an email via Gmail Webmail
+                        </a>
+                        .
+                      </li>
+                      <li>
+                        Or, email us directly at{" "}
+                        <a
+                          href='mailto:mimeticnigerialimited@gmail.com'
+                          className='underline text-blue-700'
+                        >
+                          mimeticnigerialimited@gmail.com
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+
               </CardContent>
             </Card>
 
