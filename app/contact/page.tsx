@@ -61,13 +61,13 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+234 (0) 123 456 7890", "+234 (0) 987 654 3210"],
+      details: ["+2348034395365"],
       description: "Available Monday to Friday, 8:00 AM - 6:00 PM",
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["safiyabelo@yahoo.com", "mimeticnigerialimited@gmail.com"],
+      details: [ "mimeticnigerialimited@gmail.com"],
       description: "We respond within 24 hours",
     },
     // {
@@ -115,10 +115,16 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-white rounded-lg flex items-center justify-center">
-                <Building2 className="h-6 w-6 text-red-900" />
+              <div className="relative w-40 h-14 flex items-center justify-center">
+                <Image
+                  src="/images/logo.webp"
+                  alt="Mimetic Nigeria Limited Logo"
+                  width={160}
+                  height={56}
+                  className="object-contain"
+                  priority
+                />
               </div>
-              <span className="text-xl font-bold text-white">MIMETIC</span>
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
