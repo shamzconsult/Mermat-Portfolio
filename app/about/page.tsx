@@ -7,6 +7,7 @@ import { Building2, Award, Shield, Target, Globe, Handshake, Eye, Zap, ChevronRi
 import Link from "next/link"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
+import Image from "next/image"
 
 export default function AboutPage() {
   const milestones = [
@@ -72,42 +73,30 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-28 overflow-hidden bg-gradient-to-br from-blue-50 to-emerald-50">
-        <div className="absolute inset-0 opacity-90">
-          <div className="absolute inset-0 bg-[url('/images/About-hero.png')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+       <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-blue-600 via-cyan-600 to-emerald-600">
+        <div className="absolute inset-0 bg-dots"></div>
+        <div className="absolute inset-0">
+          <Image src="/images/About-hero.png" alt="About Mimetic Nigeria" fill className="object-cover opacity-20" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/70"></div> */}
         </div>
-        
+
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6 hover:shadow-md transition-all duration-300">
+          <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
             About Mimetic Nigeria Limited
           </Badge>
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Pioneering Excellence in <br />
-            <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
-              Nigeria&apos;s Educational Sector
-            </span>
+          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+            Pioneering Excellence in
+            <span className="text-gradient"> Nigeria&apos;s Educational Sector</span>
           </h1>
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             Since our establishment in 2023, Mimetic Nigeria Limited has been at the forefront of driving sustainable
             development through innovative educational services, and human capital development.
           </p>
-          <div className="flex justify-center gap-4">
-            <Link href="/contact">
-              <Button className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl hover:from-emerald-700 hover:to-blue-700 transition-all duration-300 flex items-center gap-2">
-                Contact Us <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-            <Link href="/services">
-              <Button variant="outline" className="border-emerald-300 text-emerald-700 px-8 py-6 text-lg hover:bg-emerald-50 transition-all duration-300">
-                Our Services
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 

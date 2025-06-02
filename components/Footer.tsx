@@ -1,4 +1,5 @@
-import { Building2, Facebook, Instagram, PhoneCall } from 'lucide-react'
+import { Facebook, Instagram, PhoneCall } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -10,23 +11,29 @@ function Footer() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-white rounded-lg flex items-center justify-center">
-                  <Building2 className="h-6 w-6 text-red-900" />
+                <div className="relative w-40 h-14 flex items-center justify-center">
+                  <Image
+                    src="/images/logo.webp"
+                    alt="Mimetic Nigeria Limited Logo"
+                    width={160}
+                    height={56}
+                    className="object-contain"
+                    priority
+                  />
                 </div>
-                <span className="text-xl font-bold text-white">MIMETIC</span>
               </Link>
               <p className="text-gray-400">
                 Building Nigeria&apos;s future through human capacity
                 development and innovative educational standards.
               </p>
               <div className='flex text-gray-400 gap-4'>
-                <Link href='' className='bg-green-700 rounded-full p-2'>
+                <Link href='' className='bg-blue-900 rounded-full p-2'>
                 <Instagram/>
                 </Link>
-                <Link href='' className='bg-green-700 rounded-full p-2'>
+                <Link href='' className='bg-blue-900 rounded-full p-2'>
                 <PhoneCall/>
                 </Link>
-                <Link href='' className='bg-green-700 rounded-full p-2'>
+                <Link href='' className='bg-blue-900 rounded-full p-2'>
                 <Facebook/>
                 </Link>
               </div>

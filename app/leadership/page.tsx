@@ -61,26 +61,27 @@ export default function LeadershipPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-custom">
+       <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-blue-600 via-cyan-600 to-emerald-600">
         <div className="absolute inset-0 bg-dots"></div>
-       <div className="absolute inset-0">
-          <Image
-            src="/images/leadership-hero.png"
-            alt="Leadership Team"
-            fill
-            className="object-cover opacity-40"
-          />
+        <div className="absolute inset-0">
+          <Image src="/images/leadership-hero.png" alt="Leadership Team" fill className="object-cover opacity-20" />
+          {/* <div className="absolute inset-0 bg-white/70"></div> */}
+        </div>
+
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
             Leadership Team
           </Badge>
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
             Visionary Leaders Driving
             <span className="text-gradient"> Excellence</span>
           </h1>
-          <p className="text-xl text-black max-w-4xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-4xl mx-auto">
             Meet the experienced professionals who guide Mimetic Nigeria Limited&apos;s strategic direction, ensuring
             excellence in every project and sustainable growth across all our business sectors.
           </p>

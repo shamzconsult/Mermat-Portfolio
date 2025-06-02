@@ -119,16 +119,16 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-custom">
+       <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-blue-600 via-cyan-600 to-emerald-600">
         <div className="absolute inset-0 bg-dots"></div>
         <div className="absolute inset-0">
           <Image
             src="/images/608-6083509_free-contact-us-images-for-websites-clipart-png.png"
             alt="Contact Us"
             fill
-            className="object-cover opacity-50"
+            className="object-cover opacity-20"
           />
-          {/* <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/70"></div> */}
+          {/* <div className="absolute inset-0 bg-white/60"></div> */}
         </div>
 
         <div className="absolute inset-0 overflow-hidden">
@@ -140,11 +140,11 @@ export default function ContactPage() {
           <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
             Get In Touch
           </Badge>
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
             Let&apos;s Build Something
             <span className="text-gradient"> Amazing Together</span>
           </h1>
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             Ready to transform your vision into reality? Our team of experts is here to help you achieve your goals
             through innovative solutions and exceptional services.
           </p>
