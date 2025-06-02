@@ -191,11 +191,10 @@ export default function ServicesPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="bg-white/20 backdrop-blur-md text-white border-white/30 px-6 py-3 text-lg font-semibold mb-6">
-            <Star className="h-5 w-5 mr-2" />
+          <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
             Our Services
           </Badge>
-          <h1 className="text-6xl lg:text-7xl font-bold text-white mb-6">
+          <h1 className="text-5xl lg:text-6xl  font-bold text-white mb-6">
             Comprehensive Solutions for
             <span className="block text-emerald-300 shimmer"> Every Need</span>
           </h1>
