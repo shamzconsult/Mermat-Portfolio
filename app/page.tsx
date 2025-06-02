@@ -14,6 +14,8 @@ import {
   Handshake,
   Combine,
   ChevronRight,
+  Zap,
+  Sparkles,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -24,7 +26,7 @@ export default function HomePage() {
   const achievements = [
     { number: "2023", label: "Founded", icon: Calendar },
     { number: "2", label: "Expert Directors", icon: Users },
-    { number: "5+", label: "Team members", icon: UsersRoundIcon },
+    { number: "5", label: "Team members", icon: UsersRoundIcon, plus: true },
     { number: "100%", label: "Active Status", icon: CheckCircle },
   ]
 
@@ -145,20 +147,56 @@ export default function HomePage() {
       </section>
 
       {/* Company Stats */}
-      <section className="py-16 bg-gradient-to-b from-green-100 to-blue-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Excellence in Numbers</h2>
-            <p className="text-xl text-gray-700">Demonstrating our commitment to quality and growth</p>
+      <section className="py-12 bg-gradient-to-b from-green-100 to-blue-100 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 bg-[url('/images/dot-grid.svg')] bg-[length:40px_40px] bg-center"></div>
+        </div>
+        <div className="absolute top-10 right-10 w-64 h-64 bg-emerald-200/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-10 left-10 w-64 h-64 bg-blue-200/10 rounded-full blur-xl"></div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section header */}
+          <div className="text-center mb-12">
+            <span className="inline-block bg-white/80 backdrop-blur-sm text-emerald-600 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-100 mb-3 shadow-sm">
+              OUR IMPACT
+            </span>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">
+              <span className="bg-gradient-to-r from-emerald-600 to-blue-500 bg-clip-text text-transparent">Numbers</span> That Speak
+            </h2>
+            <p className="text-gray-600 max-w-lg mx-auto">
+              Quantifying our excellence through measurable achievements
+            </p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+
+          {/* Stats grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {achievements.map((achievement, index) => (
-              <div key={index} className="text-center group">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full mb-4 group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/10">
-                  <achievement.icon className="h-10 w-10 text-emerald-600" />
+              <div 
+                key={index} 
+                className="bg-white/80 backdrop-blur-sm rounded-xl p-5 hover:shadow-md transition-all duration-300 border border-gray-100/50 group relative overflow-hidden"
+              >
+                {/* Animated background element */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                
+                {/* Icon container */}
+                <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-blue-100 rounded-lg flex items-center justify-center mb-3 mx-auto group-hover:scale-105 transition-transform duration-300 shadow-inner shadow-emerald-100/50">
+                  <achievement.icon className="h-6 w-6 text-emerald-600" />
                 </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">{achievement.number}</div>
-                <div className="text-gray-600">{achievement.label}</div>
+                
+                {/* Number display */}
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-gray-900 mb-1">
+                    {achievement.number}
+                    {achievement.plus && <span className="text-emerald-500">+</span>}
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-sm text-gray-500 font-medium">{achievement.label}</div>
+                </div>
+                
+                {/* Subtle decorative corner */}
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-r-2 border-b-2 border-emerald-400/30 rounded-br-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             ))}
           </div>
@@ -203,28 +241,28 @@ export default function HomePage() {
 
           {/* Mission & Vision */}
           <div className="grid lg:grid-cols-2 gap-8 mt-20">
-            <div className="glass-card-green rounded-xl p-8 hover-lift">
+            <div className="gradient-card-forest rounded-3xl p-10 text-white hover-lift">
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/20 mr-4">
-                  <Target className="h-8 w-8 text-emerald-600" />
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-4">
+                  <Target className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-gray-900 font-bold text-2xl">Our Mission</h3>
+                <h3 className="text-white font-bold text-3xl">Our Mission</h3>
               </div>
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-white/90 text-lg leading-relaxed">
                 To empower individuals and institutions through technical skills training, educational support services,
                 research, and development and partnerships that will enhance personal growth and organizational
                 development.
               </p>
             </div>
 
-            <div className="glass-card-blue rounded-xl p-8 hover-lift">
+            <div className="gradient-card-ocean rounded-3xl p-10 text-white hover-lift">
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-100 to-blue-200 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/20 mr-4">
-                  <Eye className="h-8 w-8 text-blue-600" />
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-4">
+                  <Eye className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-gray-900 font-bold text-2xl">Our Vision</h3>
+                <h3 className="text-white font-bold text-3xl">Our Vision</h3>
               </div>
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-white/90 text-lg leading-relaxed">
                 A leading provider of comprehensive human capital development and educational services that foster job
                 readiness, entrepreneurship, and educational advancement in Nigeria and beyond.
               </p>
@@ -234,35 +272,42 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-100 to-green-100 relative overflow-hidden">
-        <div className="absolute inset-0 bg-dots opacity-50"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-emerald-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-30"></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl floating-element"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-emerald-300/20 rounded-full blur-3xl floating-element"></div>
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <div className="max-w-4xl mx-auto">
+            <Badge className="bg-white/20 backdrop-blur-md text-white border-white/30 px-6 py-3 text-lg font-semibold mb-8">
+              <Zap className="h-5 w-5 mr-2" />
+              Ready to Transform?
+            </Badge>
+            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
               Ready to Transform Your Vision into Reality?
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-white/90 mb-10">
               Partner with Mimetic Nigeria Limited for comprehensive solutions that drive growth, innovation, and
               sustainable development across all sectors.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white px-8 py-6 text-lg shadow-lg shadow-blue-500/20"
+                  className="bg-white text-blue-600 hover:bg-white/90 px-10 py-6 text-xl font-bold shadow-2xl"
                 >
+                  <Sparkles className="mr-2 h-6 w-6" />
                   Contact Us
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-6 w-6" />
                 </Button>
               </Link>
               <Link href="/services">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-emerald-200 bg-white text-emerald-700 hover:bg-emerald-50 px-8 py-6 text-lg"
+                  className="border-white/30 bg-white/10 backdrop-blur-md text-white hover:bg-white/20 px-10 py-6 text-xl font-bold"
                 >
                   View Our Services
                 </Button>
