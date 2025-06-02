@@ -42,7 +42,7 @@ function Header() {
               <Link href="/contact" className="text-white/80 hover:text-white transition-colors">
                 Contact
               </Link>
-              <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
+              <Button className="bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white">
                 Get Started
               </Button>
             </div>

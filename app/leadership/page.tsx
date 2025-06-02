@@ -56,12 +56,7 @@ export default function LeadershipPage() {
       expertise: ["Construction Management", "Infrastructure Development"],
       experience: "18+ years in Programs Co-ordination",
     },
-    // {
-    //   name: "Mrs. Fatima Aliyu",
-    //   role: "Business Development Advisor",
-    //   expertise: ["Strategic Partnerships", "Market Expansion"],
-    //   experience: "14+ years in Business Development",
-    // },
+    
   ]
 
   return (

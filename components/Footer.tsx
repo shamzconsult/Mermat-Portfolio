@@ -5,7 +5,7 @@ import React from 'react'
 function Footer() {
   return (
     <div>
-        <footer className="bg-black/40 backdrop-blur-sm border-t border-white/10 py-12">
+        <footer className="bg-green-900 backdrop-blur-sm border-t border-white/10 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
@@ -20,13 +20,13 @@ function Footer() {
                 development and innovative educational standards.
               </p>
               <div className='flex text-gray-400 gap-4'>
-                <Link href='' className='bg-red-900 rounded-full p-2'>
+                <Link href='' className='bg-green-700 rounded-full p-2'>
                 <Instagram/>
                 </Link>
-                <Link href='' className='bg-red-900 rounded-full p-2'>
+                <Link href='' className='bg-green-700 rounded-full p-2'>
                 <PhoneCall/>
                 </Link>
-                <Link href='' className='bg-red-900 rounded-full p-2'>
+                <Link href='' className='bg-green-700 rounded-full p-2'>
                 <Facebook/>
                 </Link>
               </div>
