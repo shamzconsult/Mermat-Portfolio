@@ -79,7 +79,7 @@ export default function LeadershipPage() {
           </Badge>
           <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
             Visionary Leaders Driving
-            <span className="text-gradient"> Excellence</span>
+            <span className="text-emerald-300 shimmer"> Excellence</span>
           </h1>
           <p className="text-xl text-gray-200 max-w-4xl mx-auto">
             Meet the experienced professionals who guide Mimetic Nigeria Limited&apos;s strategic direction, ensuring

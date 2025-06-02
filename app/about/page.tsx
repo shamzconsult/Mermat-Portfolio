@@ -91,7 +91,7 @@ export default function AboutPage() {
           </Badge>
           <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
             Pioneering Excellence in
-            <span className="text-gradient"> Nigeria&apos;s Educational Sector</span>
+            <span className="text-emerald-300 shimmer"> Nigeria&apos;s Educational Sector</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             Since our establishment in 2023, Mimetic Nigeria Limited has been at the forefront of driving sustainable

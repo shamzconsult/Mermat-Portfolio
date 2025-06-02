@@ -142,7 +142,7 @@ export default function ContactPage() {
           </Badge>
           <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
             Let&apos;s Build Something
-            <span className="text-gradient"> Amazing Together</span>
+            <span className="text-emerald-300 shimmer"> Amazing Together</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             Ready to transform your vision into reality? Our team of experts is here to help you achieve your goals
