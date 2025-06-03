@@ -92,7 +92,7 @@ export default function HomePage() {
               <div className="space-y-6">
                 <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
                   Building Nigeria&apos;s
-                  <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent"> Future </span>
+                  <span className="text-green-300"> Future </span>
                   Together
                 </h1>
                 <p className="text-gray-400 italic">Nurturing Human Potential.......</p>
@@ -108,7 +108,7 @@ export default function HomePage() {
                 <Link href="/services">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white px-8 py-6 text-lg w-full sm:w-auto shadow-lg shadow-blue-500/20"
+                    className="bg-green-700 hover:bg-green-800 text-white px-8 py-6 text-lg w-full sm:w-auto shadow-lg"
                   >
                     Explore Services
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -118,7 +118,7 @@ export default function HomePage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-emerald-200 bg-white/80 text-emerald-700 hover:bg-emerald-50 px-8 py-6 text-lg w-full sm:w-auto"
+                    className="border-white/30 bg-white/10 backdrop-blur-md text-white hover:bg-white/20 px-8 py-6 text-lg w-full sm:w-auto"
                   >
                     Learn More
                   </Button>
@@ -240,8 +240,8 @@ export default function HomePage() {
           </div>
 
           {/* Mission & Vision */}
-          <div className="grid lg:grid-cols-2 gap-8 mt-20">
-            <div className="gradient-card-forest rounded-3xl p-10 text-white hover-lift">
+           <div className="grid lg:grid-cols-2 gap-8 mt-20">
+            <div className="gradient-card-green rounded-3xl p-10 text-white hover-lift">
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-4">
                   <Target className="h-8 w-8 text-white" />
@@ -255,7 +255,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="gradient-card-ocean rounded-3xl p-10 text-white hover-lift">
+            <div className="gradient-card-blue rounded-3xl p-10 text-white hover-lift">
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-4">
                   <Eye className="h-8 w-8 text-white" />

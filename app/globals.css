@@ -194,9 +194,19 @@ html {
   box-shadow: 0 20px 40px rgba(30, 64, 175, 0.3);
 }
 
-.gradient-card-forest {
+/* .gradient-card-forest {
   background: linear-gradient(135deg, #065f46 0%, #10b981 50%, #34d399 100%);
   box-shadow: 0 20px 40px rgba(6, 95, 70, 0.3);
+} */
+
+.gradient-card-green {
+  background: #15803d;
+  box-shadow: 0 20px 40px rgba(21, 128, 61, 0.3);
+}
+
+.gradient-card-blue {
+  background: #1d4ed8;
+  box-shadow: 0 20px 40px rgba(29, 78, 216, 0.3);
 }
 
 .gradient-card-arctic {

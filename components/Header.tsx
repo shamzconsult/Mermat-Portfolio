@@ -15,7 +15,7 @@ function Header() {
             <Link href="/" className="flex items-center space-x-2">
               <div className="relative w-40 h-14 flex items-center justify-center">
                 <Image
-                  src="/images/logo.webp"
+                  src="/images/logo-image.png"
                   alt="Mimetic Nigeria Limited Logo"
                   width={160}
                   height={56}
@@ -42,7 +42,7 @@ function Header() {
               <Link href="/contact" className="text-white/80 hover:text-white transition-colors">
                 Contact
               </Link>
-              <Button className="bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white">
+              <Button className="bg-green-700 text-white">
                 Get Started
               </Button>
             </div>
