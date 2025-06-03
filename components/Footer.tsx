@@ -13,7 +13,7 @@ function Footer() {
               <Link href="/" className="flex items-center space-x-2">
                 <div className="relative w-40 h-14 flex items-center justify-center">
                   <Image
-                    src="/images/logo.webp"
+                    src="/images/logo-image.png"
                     alt="Mimetic Nigeria Limited Logo"
                     width={160}
                     height={56}
@@ -44,12 +44,12 @@ function Footer() {
               <ul className="space-y-2 text-gray-400">
                 <li>
                   <Link href="/services" className="hover:text-white transition-colors">
-                    General Contracting
+                    Educational Services
                   </Link>
                 </li>
                 <li>
                   <Link href="/services" className="hover:text-white transition-colors">
-                    Merchandise Trading
+                    General Contracting Services
                   </Link>
                 </li>
                 <li>
@@ -59,7 +59,7 @@ function Footer() {
                 </li>
                 <li>
                   <Link href="/services" className="hover:text-white transition-colors">
-                    Educational Services
+                    Technical Learning Centers
                   </Link>
                 </li>
               </ul>
@@ -80,12 +80,12 @@ function Footer() {
                 </li>
                 <li>
                   <Link href="/contact" className="hover:text-white transition-colors">
-                    Careers
+                    Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
-                    News & Updates
+                  <Link href="/services" className="hover:text-white transition-colors">
+                    Services
                   </Link>
                 </li>
               </ul>

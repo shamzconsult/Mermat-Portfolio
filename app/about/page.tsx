@@ -261,19 +261,16 @@ export default function AboutPage() {
       </section>
 
       {/* Company Values */}
-      <section className="py-20 bg-gradient-to-b from-blue-600 to-emerald-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center opacity-10 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+       <section className="py-20 bg-gradient-to-b from-blue-700 to-green-700 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-700 border-blue-200 px-4 py-2 text-sm mb-4 hover:shadow-md hover:text-white transition-all duration-300">
+            <Badge className="bg-white/20 backdrop-blur-md text-white border-white/30 px-4 py-2 text-sm mb-4">
               Our Foundation
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              <span className="bg-gradient-to-r from-emerald-600 to-white bg-clip-text text-transparent"> Our Core Values</span>
-            </h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Core Values</h2>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               The principles that guide our operations and define our commitment to excellence in every endeavor.
             </p>
@@ -281,12 +278,14 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <div 
-                key={index} 
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-emerald-100 group"
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
               >
-                <div className="w-20 h-20 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/10 group-hover:rotate-6 transition-transform duration-300">
-                  <value.icon className="h-10 w-10 text-emerald-600" />
+                <div
+                  className={`w-20 h-20 ${index % 2 === 0 ? "bg-green-100" : "bg-blue-100"} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-6 transition-transform duration-300`}
+                >
+                  <value.icon className={`h-10 w-10 ${index % 2 === 0 ? "text-green-700" : "text-blue-700"}`} />
                 </div>
                 <h3 className="text-gray-900 font-semibold text-xl mb-3 text-center">{value.title}</h3>
                 <p className="text-gray-600 text-center">{value.description}</p>
@@ -297,18 +296,17 @@ export default function AboutPage() {
       </section>
 
       {/* Company Timeline */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center opacity-10 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+       <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-700/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-700/5 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-4 hover:shadow-md transition-all duration-300">
+            <Badge className="bg-green-100 text-green-700 border-green-200 px-4 py-2 text-sm mb-4">
               Our Growth Story
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Key <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">Milestones</span>
+              Key <span className="text-gradient">Milestones</span>
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Our journey of commitment to excellence and sustainable development.
@@ -316,27 +314,29 @@ export default function AboutPage() {
           </div>
 
           <div className="relative">
-            {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 h-full w-1 bg-gradient-to-b from-emerald-500 to-blue-500 -translate-x-1/2"></div>
-            
+            <div className="hidden md:block absolute left-1/2 h-full w-1 bg-gradient-to-b from-green-700 to-blue-700 -translate-x-1/2"></div>
+
             <div className="space-y-8 md:space-y-16">
               {milestones.map((milestone, index) => (
-                <div 
-                  key={index} 
-                  className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                <div
+                  key={index}
+                  className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
                 >
-                  {/* Year badge */}
-                  <div className="w-24 h-24 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/10 z-10 mb-4 md:mb-0">
-                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border-2 border-emerald-200">
-                      <span className="text-emerald-600 font-bold text-xl">{milestone.year}</span>
+                  <div
+                    className={`w-24 h-24 ${index % 2 === 0 ? "bg-green-100" : "bg-blue-100"} rounded-full flex items-center justify-center flex-shrink-0 shadow-lg z-10 mb-4 md:mb-0`}
+                  >
+                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border-2 border-green-200">
+                      <span className={`${index % 2 === 0 ? "text-green-700" : "text-blue-700"} font-bold text-xl`}>
+                        {milestone.year}
+                      </span>
                     </div>
                   </div>
-                  
-                  {/* Connector dot */}
-                  <div className="hidden md:block w-6 h-6 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mx-6 z-10"></div>
-                  
-                  {/* Content card */}
-                  <div className={`flex-1 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+
+                  <div
+                    className={`hidden md:block w-6 h-6 ${index % 2 === 0 ? "bg-green-700" : "bg-blue-700"} rounded-full mx-6 z-10`}
+                  ></div>
+
+                  <div className={`flex-1 ${index % 2 === 0 ? "md:text-left" : "md:text-right"}`}>
                     <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
                       <h3 className="text-gray-900 font-semibold text-xl mb-2">{milestone.title}</h3>
                       <p className="text-gray-600">{milestone.description}</p>

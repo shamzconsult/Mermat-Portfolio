@@ -407,7 +407,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-8">
+          <div className="md:flex md:flex-wrap gap-8">
             <div className="flex-1 min-w-0 md:min-w-[calc(50%-1rem)] space-y-6">
               {[
                 {
@@ -447,7 +447,7 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="flex-1 min-w-0 md:min-w-[calc(50%-1rem)] space-y-6">
+            <div className="flex-1 min-w-0 md:min-w-[calc(50%-1rem)] space-y-6 mt-6 md:mt-0">
               {[
                 {
                   question: "Do you offer training and development programs?",
