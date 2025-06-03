@@ -382,7 +382,7 @@ export default function AboutPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white bg-grren-900 text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm"
+                  className="border-white bg-transparent text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm"
                 >
                   Explore Services
                 </Button>
