@@ -40,7 +40,7 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative w-40 h-14 flex items-center justify-center">
               <Image
-                src="/images/logo.webp"
+                src="/images/logo-image.png"
                 alt="Mimetic Nigeria Limited Logo"
                 width={160}
                 height={56}
