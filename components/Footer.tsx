@@ -1,32 +1,39 @@
-import { Building2, Facebook, Instagram, PhoneCall } from 'lucide-react'
+import { Facebook, Instagram, PhoneCall } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 function Footer() {
   return (
     <div>
-        <footer className="bg-black/40 backdrop-blur-sm border-t border-white/10 py-12">
+        <footer className="bg-blue-950 backdrop-blur-sm border-t border-white/10 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-white rounded-lg flex items-center justify-center">
-                  <Building2 className="h-6 w-6 text-red-900" />
+                <div className="relative w-40 h-14 flex items-center justify-center">
+                  <Image
+                    src="/images/logo-image.png"
+                    alt="Mimetic Nigeria Limited Logo"
+                    width={160}
+                    height={56}
+                    className="object-contain"
+                    priority
+                  />
                 </div>
-                <span className="text-xl font-bold text-white">MIMETIC</span>
               </Link>
               <p className="text-gray-400">
                 Building Nigeria&apos;s future through human capacity
                 development and innovative educational standards.
               </p>
               <div className='flex text-gray-400 gap-4'>
-                <Link href='' className='bg-red-900 rounded-full p-2'>
+                <Link href='' className='bg-blue-900 rounded-full p-2'>
                 <Instagram/>
                 </Link>
-                <Link href='' className='bg-red-900 rounded-full p-2'>
+                <Link href='' className='bg-blue-900 rounded-full p-2'>
                 <PhoneCall/>
                 </Link>
-                <Link href='' className='bg-red-900 rounded-full p-2'>
+                <Link href='' className='bg-blue-900 rounded-full p-2'>
                 <Facebook/>
                 </Link>
               </div>
@@ -37,12 +44,12 @@ function Footer() {
               <ul className="space-y-2 text-gray-400">
                 <li>
                   <Link href="/services" className="hover:text-white transition-colors">
-                    General Contracting
+                    Educational Services
                   </Link>
                 </li>
                 <li>
                   <Link href="/services" className="hover:text-white transition-colors">
-                    Merchandise Trading
+                    General Contracting Services
                   </Link>
                 </li>
                 <li>
@@ -52,7 +59,7 @@ function Footer() {
                 </li>
                 <li>
                   <Link href="/services" className="hover:text-white transition-colors">
-                    Educational Services
+                    Technical Learning Centers
                   </Link>
                 </li>
               </ul>
@@ -73,12 +80,12 @@ function Footer() {
                 </li>
                 <li>
                   <Link href="/contact" className="hover:text-white transition-colors">
-                    Careers
+                    Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
-                    News & Updates
+                  <Link href="/services" className="hover:text-white transition-colors">
+                    Services
                   </Link>
                 </li>
               </ul>
