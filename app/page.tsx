@@ -13,7 +13,6 @@ import {
   Eye,
   Handshake,
   Combine,
-  ChevronRight,
   Zap,
   Sparkles,
 } from "lucide-react"
@@ -229,18 +228,26 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-gray-900 font-semibold text-xl mb-3">{feature.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium"
-                >
-                  Learn more <ChevronRight className="h-4 w-4 ml-1" />
-                </Link>
+               
               </div>
             ))}
           </div>
 
           {/* Mission & Vision */}
            <div className="grid lg:grid-cols-2 gap-8 mt-20">
+            <div className="gradient-card-blue rounded-3xl p-10 text-white hover-lift">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-4">
+                  <Eye className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-white font-bold text-3xl">Our Vision</h3>
+              </div>
+              <p className="text-white/90 text-lg leading-relaxed">
+                A leading provider of comprehensive human capital development and educational services that foster job
+                readiness, entrepreneurship, and educational advancement in Nigeria and beyond.
+              </p>
+            </div>
+
             <div className="gradient-card-green rounded-3xl p-10 text-white hover-lift">
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-4">
@@ -252,19 +259,6 @@ export default function HomePage() {
                 To empower individuals and institutions through technical skills training, educational support services,
                 research, and development and partnerships that will enhance personal growth and organizational
                 development.
-              </p>
-            </div>
-
-            <div className="gradient-card-blue rounded-3xl p-10 text-white hover-lift">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-4">
-                  <Eye className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-white font-bold text-3xl">Our Vision</h3>
-              </div>
-              <p className="text-white/90 text-lg leading-relaxed">
-                A leading provider of comprehensive human capital development and educational services that foster job
-                readiness, entrepreneurship, and educational advancement in Nigeria and beyond.
               </p>
             </div>
           </div>

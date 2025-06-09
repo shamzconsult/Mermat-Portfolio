@@ -363,32 +363,48 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {offices.map((office, index) => (
-              <div key={index} className="glass-card rounded-xl p-8 hover-lift">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/10">
-                    <Building2 className="h-8 w-8 text-emerald-600" />
-                  </div>
-                  <h3 className="text-gray-900 font-bold text-xl">{office.city}</h3>
-                </div>
+          <div className="flex flex-col lg:flex-row gap-8">
+            <div className="w-full lg:w-[60%] h-[400px] lg:h-[600px] rounded-xl overflow-hidden shadow-xl">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.4096890635938!2d7.389433875691813!3d9.117417387597266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104ddf7e5331fc91%3A0xe86223749a28b354!2sAuwalu%20Anwar%20Cl%2C%20Gwarinpa%2C%20900108%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1749501972096!5m2!1sen!2sng" 
+                className="w-full h-full"
+                style={{border:0}}
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                aria-label="Our office location on Google Maps"
+              />
+            </div>
 
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">{office.address}</span>
+            <div className="w-full lg:w-[40%]">
+              <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-6 h-full">
+                {offices.map((office, index) => (
+                  <div key={index} className="glass-card rounded-xl p-6 hover-lift h-full">
+                    <div className="text-center mb-4">
+                      <div className="w-14 h-14 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-blue-500/10">
+                        <Building2 className="h-6 w-6 text-emerald-600" />
+                      </div>
+                      <h3 className="text-gray-900 font-bold text-lg">{office.city}</h3>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex items-start space-x-2">
+                        <MapPin className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm">{office.address}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Phone className="h-5 w-5 text-emerald-600 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm">{office.phone}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Mail className="h-5 w-5 text-emerald-600 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm">{office.email}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-emerald-600 flex-shrink-0" />
-                    <span className="text-gray-700">{office.phone}</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Mail className="h-5 w-5 text-emerald-600 flex-shrink-0" />
-                    <span className="text-gray-700">{office.email}</span>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

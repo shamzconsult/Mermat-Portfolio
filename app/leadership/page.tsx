@@ -13,15 +13,15 @@ export default function LeadershipPage() {
     {
       name: "Dr. Abdullahi Bello Tiffi",
       role: "Director",
-      email: "tiffibelo@gmail.com",
+      email: "bdullahibarkindo1@gmail.com",
       location: "Bauchi State",
       appointmentDate: "12 MAY 2023",
       gender: "Male",
       nationality: "Nigerian",
-      experience: "15+ years",
-      expertise: ["Strategic Planning", "Business Development", "Operations Management", "Stakeholder Relations"],
-      education: "Bachelor's in Business Administration",
-      bio: "Abdullahi brings over 15 years of extensive experience in business development and strategic planning. His leadership has been instrumental in establishing Mimetic Nigeria Limited as a trusted partner in the contracting and development sector.",
+      experience: "10+ years",
+      expertise: ["Strategic Planning", "Software Solutions", "Operations Management", "Project Management"],
+      education: "B.Sc. Computer Science",
+      bio: "Abdullahi is a Computer science professional with experience across government and private sectors. Proven skills in IT solutions, administrative systems, and project coordination. Combines technical expertise with strong communication abilities to deliver efficient systems.",
       image: "/images/Abdullahi_Tiffi.webp",
     },
     {
@@ -32,26 +32,28 @@ export default function LeadershipPage() {
       appointmentDate: "12 MAY 2023",
       gender: "Female",
       nationality: "Nigerian",
-      experience: "12+ years",
-      expertise: ["Educational Development", "Human Resources", "Project Management", "Community Relations"],
-      education: "Master's in Educational Management",
-      bio: "Safiya is a visionary leader with a passion for educational development and human capacity building. Her expertise in educational management drives our commitment to empowering individuals and institutions across Nigeria.",
+      experience: "20+ years",
+      expertise: ["Customer Service", "Human Resources", "Project Management", "Problem Solving"],
+      education: "Master's in Business Administration (MBA)",
+      bio: "Safiya is a seasoned Commercial Expert with over twenty (20) years experience in the power sector; achieving veritable success in revenue generation, improved profitability and impactful business growth. A skilled administrator / resources manager occupying Senior Management positions for the last ten (10) years.",
       image: "/images/Safiya_picture.webp",
     },
   ]
 
+
+
   const boardMembers = [
-    {
-      name: "Dr. Baliqees Bello Tiffi",
-      role: "Advisory Board Member",
-      expertise: ["Educational Policy", "Research & Development"],
-      experience: "20+ years in Educational Leadership",
-    },
     {
       name: "Mr. Shamsudeem Aderoju",
       role: "Program Development Advisor",
       expertise: ["Construction Management", "Infrastructure Development"],
-      experience: "18+ years in Programs Co-ordination",
+      experience: "8+ years in Programs Co-ordination",
+    },
+    {
+      name: "Mr. Adebayo Samuel Ayodele",
+      role: "Technology Advisory Board Member",
+      expertise: ["Tech Policy & Governance", "Research & Development"],
+      experience: "5+ years in Technology Leadership & Innovation",
     },
   ]
 

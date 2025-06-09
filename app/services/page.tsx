@@ -15,7 +15,6 @@ import {
   Building,
   Search,
   Heart,
-  ChevronRight,
   Sparkles,
   Star,
   Zap,
@@ -219,8 +218,7 @@ export default function ServicesPage() {
               <span className="text-gradient">Our Amazing</span> Services
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Comprehensive educational development and contracting solutions designed to empower individuals,
-              organizations, and communities across Nigeria.
+              Comprehensive Educational Development and Human Capacity Building Solutions designed to empower individuals, organizations and communities across Nigeria.
             </p>
           </div>
 
@@ -250,14 +248,7 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                   </div>
-                  <div className="mt-6">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center text-white hover:text-white/80 font-semibold"
-                    >
-                      Learn more <ChevronRight className="h-4 w-4 ml-1" />
-                    </Link>
-                  </div>
+                  
                 </div>
               </div>
             ))}

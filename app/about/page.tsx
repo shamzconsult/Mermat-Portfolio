@@ -222,6 +222,23 @@ export default function AboutPage() {
 
           {/* Mission & Vision */}
           <div className="grid lg:grid-cols-2 gap-8 mt-20">
+            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100 relative overflow-hidden">
+              <div className="absolute -left-10 -top-10 w-40 h-40 bg-blue-100 rounded-full opacity-20"></div>
+              <div className="absolute -right-10 -bottom-10 w-60 h-60 bg-blue-100 rounded-full opacity-10"></div>
+              <div className="relative z-10">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-100 to-blue-200 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 mr-6">
+                    <Eye className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-gray-900 font-bold text-2xl">Our Vision</h3>
+                </div>
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  A leading provider of comprehensive human capital development and educational services that foster job
+                  readiness, entrepreneurship, and educational advancement in Nigeria and beyond.
+                </p>
+              </div>
+            </div>
+            
             <div className="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-100 relative overflow-hidden">
               <div className="absolute -right-10 -top-10 w-40 h-40 bg-emerald-100 rounded-full opacity-20"></div>
               <div className="absolute -left-10 -bottom-10 w-60 h-60 bg-emerald-100 rounded-full opacity-10"></div>
@@ -236,23 +253,6 @@ export default function AboutPage() {
                   To empower individuals and institutions through technical skills training, educational support services,
                   research, and development and partnerships that will enhance personal growth and organizational
                   development.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100 relative overflow-hidden">
-              <div className="absolute -left-10 -top-10 w-40 h-40 bg-blue-100 rounded-full opacity-20"></div>
-              <div className="absolute -right-10 -bottom-10 w-60 h-60 bg-blue-100 rounded-full opacity-10"></div>
-              <div className="relative z-10">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-100 to-blue-200 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 mr-6">
-                    <Eye className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-gray-900 font-bold text-2xl">Our Vision</h3>
-                </div>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  A leading provider of comprehensive human capital development and educational services that foster job
-                  readiness, entrepreneurship, and educational advancement in Nigeria and beyond.
                 </p>
               </div>
             </div>
