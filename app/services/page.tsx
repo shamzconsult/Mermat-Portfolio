@@ -15,9 +15,7 @@ import {
   Building,
   Search,
   Heart,
-  Sparkles,
   Star,
-  Zap,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -210,8 +208,7 @@ export default function ServicesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white px-6 py-3 text-lg font-semibold mb-6">
-              <Sparkles className="h-5 w-5 mr-2" />
+            <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
               Core Services
             </Badge>
             <h2 className="text-5xl lg:text-6xl font-bold mb-6">
@@ -263,8 +260,7 @@ export default function ServicesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-6 py-3 text-lg font-semibold mb-6">
-              <Users className="h-5 w-5 mr-2" />
+            <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
               Target Audiences
             </Badge>
             <h2 className="text-5xl lg:text-6xl font-bold mb-6">
@@ -312,8 +308,7 @@ export default function ServicesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <Badge className="bg-white/20 backdrop-blur-md text-white border-white/30 px-6 py-3 text-lg font-semibold mb-6">
-              <Zap className="h-5 w-5 mr-2" />
+            <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
               Our Process
             </Badge>
             <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">How We Work</h2>
@@ -373,8 +368,7 @@ export default function ServicesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <Badge className="bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-6 py-3 text-lg font-semibold mb-8">
-              <Sparkles className="h-5 w-5 mr-2" />
+            <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
               Ready to Get Started?
             </Badge>
             <h2 className="text-5xl lg:text-6xl font-bold mb-6">
