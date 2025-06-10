@@ -2,29 +2,39 @@
 
 import type React from "react"
 
-import { FormEvent, useRef, useState } from "react"
+import { type FormEvent, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Building2, Menu, X, Phone, Mail, MapPin, Clock, Send, MessageSquare, ArrowRight, ChevronDown } from "lucide-react"
+import {
+  Building2,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  MessageSquare,
+  ArrowRight,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/Footer"
+import Header from "@/components/Header"
 
 interface ContactFormData {
-  name: string,
-  email: string,
-  phoneNumber: string,
-  company: string,
-  service: string,
-  message: string,
+  name: string
+  email: string
+  phoneNumber: string
+  company: string
+  service: string
+  message: string
 }
 
 export default function ContactPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-   const [showFallback, setShowFallback] = useState(false);
+  const [showFallback, setShowFallback] = useState(false)
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -33,9 +43,10 @@ export default function ContactPage() {
     service: "",
     message: "",
   })
-  const mailtoRef = useRef<HTMLAnchorElement>(null);
+  const mailtoRef = useRef<HTMLAnchorElement>(null)
 
   const [faqOpenStates, setFaqOpenStates] = useState(Array(6).fill(false))
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
@@ -44,19 +55,20 @@ export default function ContactPage() {
     }))
   }
 
-   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const { name, email, phoneNumber, company, service, message } = formData;
-    const subject = encodeURIComponent("Contact Request from Website");
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const { name, email, phoneNumber, company, service, message } = formData
+    const subject = encodeURIComponent("Contact Request from Website")
     const body = encodeURIComponent(
       `**Contact Request**\n\n` +
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phoneNumber}\n` +
-      `Company: ${company}\nService: ${service}\n\nMessage:\n${message}`
-    );
-    window.location.href = `mailto:mimeticnigerialimited@gmail.com?subject=${subject}&body=${body}`;
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phoneNumber}\n` +
+        `Company: ${company}\nService: ${service}\n\nMessage:\n${message}`,
+    )
+    window.location.href = `mailto:mimeticnigerialimited@gmail.com?subject=${subject}&body=${body}`
 
-    setShowFallback(true);
-  };
+    setShowFallback(true)
+  }
+
   const contactInfo = [
     {
       icon: Phone,
@@ -67,15 +79,9 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email",
-      details: [ "mimeticnigerialimited@gmail.com"],
+      details: ["mimeticnigerialimited@gmail.com"],
       description: "We respond within 24 hours",
     },
-    // {
-    //   icon: MapPin,
-    //   title: "Head Office",
-    //   details: ["7th Avenue, Gwarimpa II", "Abuja, FCT, Nigeria"],
-    //   description: "Visit us during business hours",
-    // },
     {
       icon: Clock,
       title: "Business Hours",
@@ -97,7 +103,6 @@ export default function ContactPage() {
       phone: "+234 (0) 987 654 3210",
       email: "bauchi@mimeticnigeria.com",
     },
-    
   ]
 
   const toggleFaq = (index: number) => {
@@ -109,76 +114,13 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-950 to-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="relative w-40 h-14 flex items-center justify-center">
-                <Image
-                  src="/images/logo.webp"
-                  alt="Mimetic Nigeria Limited Logo"
-                  width={160}
-                  height={56}
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </Link>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-white/80 hover:text-white transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="text-white/80 hover:text-white transition-colors">
-                About
-              </Link>
-              <Link href="/services" className="text-white/80 hover:text-white transition-colors">
-                Services
-              </Link>
-              <Link href="/leadership" className="text-white/80 hover:text-white transition-colors">
-                Leadership
-              </Link>
-              <Link href="/contact" className="text-white border-b-2 border-red-500">
-                Contact
-              </Link>
-              <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
-                Get Started
-              </Button>
-            </div>
-
-            <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden bg-black/90 backdrop-blur-md">
-            <div className="px-4 py-4 space-y-4">
-              <Link href="/" className="block text-white/80 hover:text-white transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="block text-white/80 hover:text-white transition-colors">
-                About
-              </Link>
-              <Link href="/services" className="block text-white/80 hover:text-white transition-colors">
-                Services
-              </Link>
-              <Link href="/leadership" className="block text-white/80 hover:text-white transition-colors">
-                Leadership
-              </Link>
-              <Link href="/contact" className="block text-white">
-                Contact
-              </Link>
-            </div>
-          </div>
-        )}
-      </nav>
+      <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+       <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-blue-600 via-cyan-600 to-emerald-600">
+        <div className="absolute inset-0 bg-dots"></div>
         <div className="absolute inset-0">
           <Image
             src="/images/608-6083509_free-contact-us-images-for-websites-clipart-png.png"
@@ -186,18 +128,21 @@ export default function ContactPage() {
             fill
             className="object-cover opacity-20"
           />
+          {/* <div className="absolute inset-0 bg-white/60"></div> */}
+        </div>
+
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="bg-gradient-to-r from-red-500/20 to-white/20 text-red-200 border-red-500/30 mb-6">
+          <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
             Get In Touch
           </Badge>
           <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
             Let&apos;s Build Something
-            <span className="bg-gradient-to-r from-red-400 to-white bg-clip-text text-transparent">
-              {" "}
-              Amazing Together
-            </span>
+            <span className="text-emerald-300 shimmer"> Amazing Together</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             Ready to transform your vision into reality? Our team of experts is here to help you achieve your goals
@@ -207,194 +152,195 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots-blue opacity-30"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center text-2xl">
-                  <MessageSquare className="h-6 w-6 mr-3 text-red-400" />
-                  Send Us a Message
-                </CardTitle>
-                <p className="text-gray-300">Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-white text-sm font-medium mb-2">Full Name *</label>
-                      <Input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                        placeholder="Your full name"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-white text-sm font-medium mb-2">Email Address *</label>
-                      <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                        placeholder="your.email@example.com"
-                        required
-                      />
-                    </div>
-                  </div>
+            <div className="glass-card rounded-xl p-8 hover-lift">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/10 mr-3">
+                  <MessageSquare className="h-6 w-6 text-emerald-600" />
+                </div>
+                <div>
+                  <h2 className="text-gray-900 font-bold text-2xl">Send Us a Message</h2>
+                  <p className="text-gray-600">
+                    Fill out the form below and we&apos;ll get back to you within 24 hours.
+                  </p>
+                </div>
+              </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-white text-sm font-medium mb-2">Phone Number</label>
-                      <Input
-                        type="tel"
-                        name="phoneNumber"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                        placeholder="+234 (0) 123 456 7890"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-white text-sm font-medium mb-2">Company/Organization</label>
-                      <Input
-                        type="text"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                  </div>
-
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-white text-sm font-medium mb-2">Service of Interest</label>
-                    <select
-                      name="service"
-                      value={formData.service}
+                    <label className="block text-gray-700 text-sm font-medium mb-2">Full Name *</label>
+                    <Input
+                      type="text"
+                      name="name"
+                      value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full bg-white/10 border border-white/20 text-white rounded-md px-3 py-2"
-                    >
-                      <option value="" className="bg-slate-800">
-                        Select a service
-                      </option>
-                      <option value="general-contracting" className="bg-slate-800">
-                        General Contracting
-                      </option>
-                      <option value="merchandise-trading" className="bg-slate-800">
-                        Merchandise Trading
-                      </option>
-                      <option value="capacity-development" className="bg-slate-800">
-                        Human Capital Development
-                      </option>
-                      <option value="educational-services" className="bg-slate-800">
-                        Educational Services
-                      </option>
-                      <option value="consultation" className="bg-slate-800">
-                        General Consultation
-                      </option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-white text-sm font-medium mb-2">Message *</label>
-                    <Textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 min-h-[120px]"
-                      placeholder="Tell us about your project or inquiry..."
+                      className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:ring-emerald-500"
+                      placeholder="Your full name"
                       required
                     />
                   </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-3"
-                  >
-                    Send Message
-                    <Send className="ml-2 h-4 w-4" />
-                  </Button>
-                </form>
-
-                {/* Hidden mailto anchor */}
-                <a ref={mailtoRef} style={{ display: "none" }}>
-                  Mail
-                </a>
-
-                {/* Fallback message and Gmail link */}
-                {showFallback && (
-                  <div className='mt-4 p-4 bg-yellow-50 border border-yellow-300 rounded text-yellow-900 text-sm'>
-                    <p>
-                      <strong>If your email client did not open:</strong>
-                    </p>
-                    <ul className='list-disc ml-5'>
-                      <li>
-                        You can{" "}
-                        <a
-                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=mimeticnigerialimited@gmail.com&su=Contact%20Request%20from%20Website&body=${encodeURIComponent(
-                            `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phoneNumber}\nWhich company are you reaching us from?: ${formData.company}\nService Interested In:**\n${formData.service || "Not specified"}\n\nPlease provide more context here: ${formData.message}`
-                          )}`}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='underline text-blue-700'
-                        >
-                          send us an email via Gmail Webmail
-                        </a>
-                        .
-                      </li>
-                      <li>
-                        Or, email us directly at{" "}
-                        <a
-                          href='mailto:mimeticnigerialimited@gmail.com'
-                          className='underline text-blue-700'
-                        >
-                          mimeticnigerialimited@gmail.com
-                        </a>
-                      </li>
-                    </ul>
+                  <div>
+                    <label className="block text-gray-700 text-sm font-medium mb-2">Email Address *</label>
+                    <Input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:ring-emerald-500"
+                      placeholder="your.email@example.com"
+                      required
+                    />
                   </div>
-                )}
+                </div>
 
-              </CardContent>
-            </Card>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-gray-700 text-sm font-medium mb-2">Phone Number</label>
+                    <Input
+                      type="tel"
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleInputChange}
+                      className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:ring-emerald-500"
+                      placeholder="+234 (0) 123 456 7890"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700 text-sm font-medium mb-2">Company/Organization</label>
+                    <Input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:ring-emerald-500"
+                      placeholder="Your company name"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 text-sm font-medium mb-2">Service of Interest</label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    className="w-full bg-white border border-gray-200 text-gray-900 rounded-md px-3 py-2 focus:border-emerald-500 focus:ring-emerald-500"
+                  >
+                    <option value="" className="bg-white">
+                      Select a service
+                    </option>
+                    <option value="general-contracting" className="bg-white">
+                      General Contracting
+                    </option>
+                    <option value="merchandise-trading" className="bg-white">
+                      Merchandise Trading
+                    </option>
+                    <option value="capacity-development" className="bg-white">
+                      Human Capital Development
+                    </option>
+                    <option value="educational-services" className="bg-white">
+                      Educational Services
+                    </option>
+                    <option value="consultation" className="bg-white">
+                      General Consultation
+                    </option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 text-sm font-medium mb-2">Message *</label>
+                  <Textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:ring-emerald-500 min-h-[120px]"
+                    placeholder="Tell us about your project or inquiry..."
+                    required
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white py-3 shadow-lg shadow-blue-500/20"
+                >
+                  Send Message
+                  <Send className="ml-2 h-4 w-4" />
+                </Button>
+              </form>
+
+              {/* Hidden mailto anchor */}
+              <a ref={mailtoRef} style={{ display: "none" }}>
+                Mail
+              </a>
+
+              {/* Fallback message and Gmail link */}
+              {showFallback && (
+                <div className="mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded text-emerald-800 text-sm">
+                  <p>
+                    <strong>If your email client did not open:</strong>
+                  </p>
+                  <ul className="list-disc ml-5">
+                    <li>
+                      You can{" "}
+                      <a
+                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=mimeticnigerialimited@gmail.com&su=Contact%20Request%20from%20Website&body=${encodeURIComponent(
+                          `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phoneNumber}\nWhich company are you reaching us from?: ${formData.company}\nService Interested In:**\n${formData.service || "Not specified"}\n\nPlease provide more context here: ${formData.message}`,
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline text-emerald-700"
+                      >
+                        send us an email via Gmail Webmail
+                      </a>
+                      .
+                    </li>
+                    <li>
+                      Or, email us directly at{" "}
+                      <a href="mailto:mimeticnigerialimited@gmail.com" className="underline text-emerald-700">
+                        mimeticnigerialimited@gmail.com
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
 
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold text-white mb-6">Get in Touch</h2>
-                <p className="text-gray-300 text-lg mb-8">
-                  We&apos;re here to help you succeed. Reach out to us through any of the following channels, and our team
-                  will respond promptly to discuss your needs.
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+                <p className="text-gray-700 text-lg mb-8">
+                  We&apos;re here to help you succeed. Reach out to us through any of the following channels, and our
+                  team will respond promptly to discuss your needs.
                 </p>
               </div>
 
               <div className="grid gap-6">
                 {contactInfo.map((info, index) => (
-                  <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-red-500/20 to-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                          <info.icon className="h-6 w-6 text-red-400" />
-                        </div>
-                        <div>
-                          <h3 className="text-white font-semibold mb-2">{info.title}</h3>
-                          {info.details.map((detail, idx) => (
-                            <p key={idx} className="text-gray-300 mb-1">
-                              {detail}
-                            </p>
-                          ))}
-                          <p className="text-gray-400 text-sm mt-2">{info.description}</p>
-                        </div>
+                  <div key={index} className="glass-card rounded-xl p-6 hover-lift">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/10 flex-shrink-0">
+                        <info.icon className="h-6 w-6 text-emerald-600" />
                       </div>
-                    </CardContent>
-                  </Card>
+                      <div>
+                        <h3 className="text-gray-900 font-semibold mb-2">{info.title}</h3>
+                        {info.details.map((detail, idx) => (
+                          <p key={idx} className="text-gray-700 mb-1">
+                            {detail}
+                          </p>
+                        ))}
+                        <p className="text-gray-500 text-sm mt-2">{info.description}</p>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -403,62 +349,81 @@ export default function ContactPage() {
       </section>
 
       {/* Office Locations */}
-      <section className="py-20 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-b from-blue-100 to-green-100 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-30"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Locations</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              With offices across Nigeria, we&apos;re positioned to serve clients nationwide and provide localized support
-              for all your business needs.
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Locations</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              With offices across Nigeria, we&apos;re positioned to serve clients nationwide and provide localized
+              support for all your business needs.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {offices.map((office, index) => (
-              <Card
-                key={index}
-                className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-              >
-                <CardContent className="p-6">
-                  <div className="text-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-red-500/20 to-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Building2 className="h-8 w-8 text-red-400" />
-                    </div>
-                    <h3 className="text-white font-semibold text-lg">{office.city}</h3>
-                  </div>
+          <div className="flex flex-col lg:flex-row gap-8">
+            <div className="w-full lg:w-[60%] h-[400px] lg:h-[600px] rounded-xl overflow-hidden shadow-xl">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.4096890635938!2d7.389433875691813!3d9.117417387597266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104ddf7e5331fc91%3A0xe86223749a28b354!2sAuwalu%20Anwar%20Cl%2C%20Gwarinpa%2C%20900108%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1749501972096!5m2!1sen!2sng" 
+                className="w-full h-full"
+                style={{border:0}}
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                aria-label="Our office location on Google Maps"
+              />
+            </div>
 
-                  <div className="space-y-3 text-sm">
-                    <div className="flex items-start space-x-3">
-                      <MapPin className="h-4 w-4 text-red-400 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-300">{office.address}</span>
+            <div className="w-full lg:w-[40%]">
+              <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-6 h-full">
+                {offices.map((office, index) => (
+                  <div key={index} className="glass-card rounded-xl p-6 hover-lift h-full">
+                    <div className="text-center mb-4">
+                      <div className="w-14 h-14 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-blue-500/10">
+                        <Building2 className="h-6 w-6 text-emerald-600" />
+                      </div>
+                      <h3 className="text-gray-900 font-bold text-lg">{office.city}</h3>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Phone className="h-4 w-4 text-red-400 flex-shrink-0" />
-                      <span className="text-gray-300">{office.phone}</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Mail className="h-4 w-4 text-red-400 flex-shrink-0" />
-                      <span className="text-gray-300">{office.email}</span>
+
+                    <div className="space-y-2">
+                      <div className="flex items-start space-x-2">
+                        <MapPin className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm">{office.address}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Phone className="h-5 w-5 text-emerald-600 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm">{office.phone}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Mail className="h-5 w-5 text-emerald-600 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm">{office.email}</span>
+                      </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots-blue opacity-30"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Quick answers to common questions about our services and processes.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-8">
+          <div className="md:flex md:flex-wrap gap-8">
             <div className="flex-1 min-w-0 md:min-w-[calc(50%-1rem)] space-y-6">
               {[
                 {
@@ -477,30 +442,28 @@ export default function ContactPage() {
                     "Project timelines vary based on scope and complexity. We provide detailed project schedules during the planning phase and maintain regular communication throughout the project lifecycle.",
                 },
               ].map((faq, index) => (
-                <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm">
-                  <CardContent className="p-0">
-                    <button
-                      onClick={() => toggleFaq(index)}
-                      className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
-                    >
-                      <h3 className="text-white font-semibold">{faq.question}</h3>
-                      <ChevronDown
-                        className={`h-5 w-5 text-red-400 transition-transform duration-200 ${
-                          faqOpenStates[index] ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {faqOpenStates[index] && (
-                      <div className="px-6 pb-6">
-                        <p className="text-gray-400 text-sm leading-relaxed">{faq.answer}</p>
-                      </div>
+                <div key={index} className="glass-card rounded-xl overflow-hidden hover-lift">
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full p-6 text-left flex items-center justify-between hover:bg-blue-50/50 transition-colors"
+                  >
+                    <h3 className="text-gray-900 font-semibold">{faq.question}</h3>
+                    {faqOpenStates[index] ? (
+                      <ChevronUp className="h-5 w-5 text-emerald-600 transition-transform duration-200" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-emerald-600 transition-transform duration-200" />
                     )}
-                  </CardContent>
-                </Card>
+                  </button>
+                  {faqOpenStates[index] && (
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
 
-            <div className="flex-1 min-w-0 md:min-w-[calc(50%-1rem)] space-y-6">
+            <div className="flex-1 min-w-0 md:min-w-[calc(50%-1rem)] space-y-6 mt-6 md:mt-0">
               {[
                 {
                   question: "Do you offer training and development programs?",
@@ -518,26 +481,24 @@ export default function ContactPage() {
                     "Yes, we collaborate with international institutions and organizations to bring global best practices and innovative solutions to our Nigerian clients.",
                 },
               ].map((faq, index) => (
-                <Card key={index + 3} className="bg-white/5 border-white/10 backdrop-blur-sm">
-                  <CardContent className="p-0">
-                    <button
-                      onClick={() => toggleFaq(index + 3)}
-                      className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
-                    >
-                      <h3 className="text-white font-semibold">{faq.question}</h3>
-                      <ChevronDown
-                        className={`h-5 w-5 text-red-400 transition-transform duration-200 ${
-                          faqOpenStates[index + 3] ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {faqOpenStates[index + 3] && (
-                      <div className="px-6 pb-6">
-                        <p className="text-gray-400 text-sm leading-relaxed">{faq.answer}</p>
-                      </div>
+                <div key={index + 3} className="glass-card rounded-xl overflow-hidden hover-lift">
+                  <button
+                    onClick={() => toggleFaq(index + 3)}
+                    className="w-full p-6 text-left flex items-center justify-between hover:bg-blue-50/50 transition-colors"
+                  >
+                    <h3 className="text-gray-900 font-semibold">{faq.question}</h3>
+                    {faqOpenStates[index + 3] ? (
+                      <ChevronUp className="h-5 w-5 text-emerald-600 transition-transform duration-200" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-emerald-600 transition-transform duration-200" />
                     )}
-                  </CardContent>
-                </Card>
+                  </button>
+                  {faqOpenStates[index + 3] && (
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -545,18 +506,22 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-emerald-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-30"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Join hundreds of satisfied clients who have experienced the Mimetic difference. Let&apos;s discuss how we can
-              help bring your vision to life.
+            <p className="text-xl text-white mb-8">
+              Join hundreds of satisfied clients who have experienced the Mimetic difference. Let&apos;s discuss how we
+              can help bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-8 py-4 text-lg"
+                className="bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white px-8 py-6 text-lg shadow-lg shadow-blue-500/20"
               >
                 Schedule Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -565,7 +530,7 @@ export default function ContactPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/20 bg-transparent text-white hover:bg-white/10 px-8 py-4 text-lg"
+                  className="border-emerald-200 bg-white text-emerald-700 hover:bg-emerald-50 px-8 py-6 text-lg"
                 >
                   View Our Services
                 </Button>
@@ -576,7 +541,7 @@ export default function ContactPage() {
       </section>
 
       {/* Footer */}
-     <Footer/>
+      <Footer />
     </div>
   )
 }

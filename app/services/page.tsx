@@ -1,16 +1,11 @@
 "use client"
-
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
   Building2,
   Users,
   Calendar,
   CheckCircle,
-  Menu,
-  X,
   Handshake,
   BookOpen,
   Briefcase,
@@ -20,15 +15,17 @@ import {
   Building,
   Search,
   Heart,
+  Sparkles,
+  Star,
+  Zap,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/Footer"
+import Header from "@/components/Header"
 
 export default function ServicesPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-   const mainServices = [
+  const mainServices = [
     {
       icon: Users,
       title: "Human Capacity Development Services",
@@ -42,6 +39,7 @@ export default function ServicesPage() {
         "Entrepreneurship Development",
       ],
       image: "/images/Human-capacity.png",
+      gradient: "gradient-card-emerald",
     },
     {
       icon: BookOpen,
@@ -56,6 +54,7 @@ export default function ServicesPage() {
         "Professional Mentoring Programs",
       ],
       image: "/images/Educational-career.png",
+      gradient: "gradient-card-blue",
     },
     {
       icon: Factory,
@@ -70,6 +69,7 @@ export default function ServicesPage() {
         "Organizational Development Support",
       ],
       image: "/images/Educational-materials.png",
+      gradient: "gradient-card-teal",
     },
     {
       icon: GraduationCap,
@@ -84,6 +84,7 @@ export default function ServicesPage() {
         "Specialized Education Centers",
       ],
       image: "/images/Vocational-technical.png",
+      gradient: "gradient-card-cyan",
     },
     {
       icon: Calendar,
@@ -98,12 +99,12 @@ export default function ServicesPage() {
         "Professional Development Seminars",
       ],
       image: "/images/study-group-african-people.jpg",
+      gradient: "gradient-card-sky",
     },
     {
       icon: Building2,
       title: "General Contracting Services",
-      description:
-        "Comprehensive contracting services including logistics, procurement, curriculum development.",
+      description: "Comprehensive contracting services including logistics, procurement, curriculum development.",
       features: [
         "Logistics Services",
         "Procurement Management",
@@ -112,68 +113,7 @@ export default function ServicesPage() {
         "Educational Development Activities",
       ],
       image: "/images/General-contracting.png",
-    },
-  ]
-  const educationalServices = [
-    {
-      icon: Users,
-      title: "Human Capacity Development",
-      description: "Technical skills training that promotes job readiness, business startup, and development.",
-      features: [
-        "Technical Skills Training",
-        "Vocational Education Programs",
-        "Professional Certification Courses",
-        "Entrepreneurship Development",
-        "Job Readiness Programs",
-      ],
-    },
-    {
-      icon: BookOpen,
-      title: "Educational & Career Mentoring",
-      description: "Educational materials, research methods training, and comprehensive career mentoring services.",
-      features: [
-        "Career Guidance & Counseling",
-        "Research Methodology Training",
-        "Academic Support Services",
-        "Professional Development",
-        "Educational Resource Provision",
-      ],
-    },
-    {
-      icon: Handshake,
-      title: "Educational Institution Collaboration",
-      description: "Partnering with accredited institutions to support educational infrastructure and learning.",
-      features: [
-        "Institutional Partnerships",
-        "Curriculum Development",
-        "Infrastructure Support",
-        "Faculty Development Programs",
-        "Educational Technology Integration",
-      ],
-    },
-    {
-      icon: Factory,
-      title: "Vocational & Technical Centers",
-      description: "Creating franchise or study centers for regular and specialized technical education.",
-      features: [
-        "Learning Center Establishment",
-        "Technical Training Facilities",
-        "Equipment & Resource Provision",
-        "Franchise Opportunities",
-        "Specialized Program Development",
-      ],
-    },
-    {
-      icon: Calendar,
-      title: "Event Organization & Advocacy",
-      description: "Organizing debates, lectures, exhibitions, and conferences to promote education.",
-      features: [
-        "Educational Conferences",
-        "Professional Workshops",
-        "Public Lectures & Seminars",
-        "Exhibition Organization",
-        "Advocacy Campaigns",
-      ],
+      gradient: "gradient-card-indigo",
     },
   ]
 
@@ -183,134 +123,81 @@ export default function ServicesPage() {
       title: "Government Agencies",
       description:
         "We partner with ministries, departments and public sector institutions to implement training programs, educational initiatives, youth development strategies, and research-based policy support.",
+      gradient: "gradient-card-emerald",
     },
     {
       icon: Search,
       title: "Research Institutions and Institutes",
       description:
         "We collaborate with research organizations to provide training in research methods, data interpretation, and the design of practical, community-impact-driven projects.",
+      gradient: "gradient-card-blue",
     },
     {
       icon: GraduationCap,
       title: "Educational Institutions",
       description:
         "From primary schools to tertiary institutions and training centers, we support education providers with infrastructure setup, study center operations, and curriculum enhancement.",
+      gradient: "gradient-card-teal",
     },
     {
       icon: Handshake,
       title: "NGOs and Development Organizations",
       description:
         "We work alongside development partners and non-profits to co-create community education initiatives, skill empowerment programs, and public enlightenment campaigns.",
+      gradient: "gradient-card-cyan",
     },
     {
       icon: Briefcase,
       title: "Private Organizations",
       description:
         "Whether you're an SME or a large enterprise, we provide training, business development support, talent readiness programs, and supply services tailored to your organizational needs.",
+      gradient: "gradient-card-sky",
     },
     {
       icon: Users,
       title: "Youth and Students",
       description:
         "Our heartbeat. We help young people access job-readiness skills, technical and vocational education, entrepreneurial mentorship, and career guidance.",
+      gradient: "gradient-card-indigo",
     },
     {
       icon: Heart,
       title: "High Net-Worth Individuals (HNWIs)",
       description:
         "For individuals passionate about giving back or building educational impact, we offer partnership opportunities in CSR, scholarship schemes, and strategic philanthropic ventures.",
+      gradient: "gradient-card-mint",
     },
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-950 to-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="relative w-40 h-14 flex items-center justify-center">
-                <Image
-                  src="/images/logo.webp"
-                  alt="Mimetic Nigeria Limited Logo"
-                  width={160}
-                  height={56}
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </Link>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-white/80 hover:text-white transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="text-white/80 hover:text-white transition-colors">
-                About
-              </Link>
-              <Link href="/services" className="text-white border-b-2 border-red-500">
-                Services
-              </Link>
-              <Link href="/leadership" className="text-white/80 hover:text-white transition-colors">
-                Leadership
-              </Link>
-              <Link href="/contact" className="text-white/80 hover:text-white transition-colors">
-                Contact
-              </Link>
-              <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
-                Get Started
-              </Button>
-            </div>
-
-            <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden bg-black/90 backdrop-blur-md">
-            <div className="px-4 py-4 space-y-4">
-              <Link href="/" className="block text-white/80 hover:text-white transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="block text-white/80 hover:text-white transition-colors">
-                About
-              </Link>
-              <Link href="/services" className="block text-white">
-                Services
-              </Link>
-              <Link href="/leadership" className="block text-white/80 hover:text-white transition-colors">
-                Leadership
-              </Link>
-              <Link href="/contact" className="block text-white/80 hover:text-white transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-        )}
-      </nav>
+      <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-blue-600 via-cyan-600 to-emerald-600">
+        <div className="absolute inset-0 bg-dots opacity-30"></div>
         <div className="absolute inset-0">
-          <Image
-            src="/images/service-hero.png"
-            alt="Our Services"
-            fill
-            className="object-cover opacity-20"
-          />
+          <Image src="/images/service-hero.png" alt="Our Services" fill className="object-cover opacity-20" />
+        </div>
+
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-white/20 rounded-full blur-xl floating-element"></div>
+          <div className="absolute top-40 right-32 w-24 h-24 bg-emerald-300/30 rounded-full blur-lg floating-element"></div>
+          <div className="absolute bottom-32 left-32 w-40 h-40 bg-blue-300/20 rounded-full blur-xl floating-element"></div>
+          <div className="absolute bottom-20 right-20 w-28 h-28 bg-cyan-300/30 rounded-full blur-lg floating-element"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="bg-gradient-to-r from-red-500/20 to-white/20 text-red-200 border-red-500/30 mb-6">
+          <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
             Our Services
           </Badge>
-          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl lg:text-6xl  font-bold text-white mb-6">
             Comprehensive Solutions for
-            <span className="bg-gradient-to-r from-red-400 to-white bg-clip-text text-transparent"> Every Need</span>
+            <span className="block text-emerald-300 shimmer"> Every Need</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+          <p className="text-xl text-white/90 max-w-4xl mx-auto">
             From infrastructure development to educational advancement, we provide integrated solutions that drive
             growth, innovation, and sustainable development across Nigeria.
           </p>
@@ -318,103 +205,72 @@ export default function ServicesPage() {
       </section>
 
       {/* Main Services */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-emerald-50 via-white to-blue-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots-green opacity-50"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Core Services</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive educational development and contracting solutions designed to empower individuals,
-              organizations, and communities across Nigeria.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {mainServices.map((service, index) => (
-              <Card
-                key={index}
-                className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="relative h-48 overflow-hidden rounded-t-lg">
-                  <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-white flex items-center text-2xl">
-                    <service.icon className="h-8 w-8 mr-3 text-red-400" />
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-gray-300">{service.description}</p>
-                  <div className="space-y-2">
-                    <h4 className="text-white font-semibold">Key Features:</h4>
-                    <ul className="space-y-1">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="text-gray-400 text-sm flex items-center">
-                          <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-
-                  </div>
-                  
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Educational Services */}
-      <section className="py-20 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Educational & Development Services</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive human capacity development and educational services designed to empower individuals and
-              institutions.
+            <Badge className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white px-6 py-3 text-lg font-semibold mb-6">
+              <Sparkles className="h-5 w-5 mr-2" />
+              Core Services
+            </Badge>
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+              <span className="text-gradient">Our Amazing</span> Services
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Comprehensive Educational Development and Human Capacity Building Solutions designed to empower individuals, organizations and communities across Nigeria.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {educationalServices.map((service, index) => (
-              <Card
-                key={index}
-                className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
-              >
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-red-500/20 to-white/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <service.icon className="h-8 w-8 text-red-400" />
+            {mainServices.map((service, index) => (
+              <div key={index} className={`${service.gradient} rounded-3xl overflow-hidden hover-lift text-white`}>
+                <div className="relative h-48 overflow-hidden">
+                  <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-3">
+                      <service.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-white font-bold text-xl">{service.title}</h3>
                   </div>
-                  <h3 className="text-white font-semibold mb-3 text-lg">{service.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{service.description}</p>
-                  <div className="space-y-2">
-                    <h4 className="text-white font-semibold text-sm">Services Include:</h4>
-                    <ul className="space-y-1">
+                  <p className="text-white/90 mb-6">{service.description}</p>
+                  <div className="space-y-3">
+                    <h4 className="text-white font-semibold">Key Features:</h4>
+                    <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="text-gray-400 text-xs flex items-center">
-                          <CheckCircle className="h-3 w-3 text-green-400 mr-2 flex-shrink-0" />
+                        <li key={idx} className="text-white/80 text-sm flex items-center">
+                          <CheckCircle className="h-4 w-4 text-white mr-2 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
                     </ul>
                   </div>
-                </CardContent>
-              </Card>
+                  
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Target Audiences */}
-       <section className="py-20 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-emerald-50"></div>
+        <div className="absolute inset-0 bg-dots-blue opacity-30"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Target Audiences</h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+            <Badge className="bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-6 py-3 text-lg font-semibold mb-6">
+              <Users className="h-5 w-5 mr-2" />
+              Target Audiences
+            </Badge>
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+              <span className="text-gradient">Who We</span> Proudly Serve
+            </h2>
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
               At Mimetic Nigeria Limited, our work touches diverse sectors of society — from policy to people,
               institutions to individuals. Here&apos;s who we proudly serve:
             </p>
@@ -422,60 +278,89 @@ export default function ServicesPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {targetAudiences.map((audience, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
+                className={`${audience.gradient} rounded-3xl p-8 text-white hover-lift hover-glow-green`}
               >
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-red-500/20 to-white/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <audience.icon className="h-8 w-8 text-red-400" />
-                  </div>
-                  <h3 className="text-white font-semibold mb-3 text-lg">{audience.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4 leading-relaxed">{audience.description}</p>
-                  {/* <div className="space-y-1">
-                    {audience.services.map((service, idx) => (
-                      <Badge key={idx} variant="outline" className="text-xs border-red-500/30 text-red-300 mr-1 mb-1">
-                        {service}
-                      </Badge>
-                    ))}
-                  </div> */}
-                </CardContent>
-              </Card>
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6">
+                  <audience.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-white font-bold text-xl mb-4">{audience.title}</h3>
+                <p className="text-white/90 text-sm leading-relaxed">{audience.description}</p>
+              </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <p className="text-gray-300 text-lg italic">
-              &ldquo;Together, we work toward national development goals and sustainable impact across all sectors.&rdquo;
-            </p>
+          <div className="text-center mt-16">
+            <div className="gradient-card-arctic rounded-3xl p-10 text-center">
+              <p className="text-blue-800 text-2xl font-bold italic">
+                &ldquo;Together, we work toward national development goals and sustainable impact across all
+                sectors.&rdquo;
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-blue-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-30"></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl floating-element"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-emerald-300/20 rounded-full blur-3xl floating-element"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Process</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <Badge className="bg-white/20 backdrop-blur-md text-white border-white/30 px-6 py-3 text-lg font-semibold mb-6">
+              <Zap className="h-5 w-5 mr-2" />
+              Our Process
+            </Badge>
+            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">How We Work</h2>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               A systematic approach to delivering exceptional results in every project.
             </p>
           </div>
 
           <div className="grid md:grid-cols-5 gap-8">
             {[
-              { step: "01", title: "Consultation", description: "Understanding your needs and objectives" },
-              { step: "02", title: "Planning", description: "Developing comprehensive project strategies" },
-              { step: "03", title: "Execution", description: "Implementing solutions with precision" },
-              { step: "04", title: "Evaluation", description: "Evaluating quality results" },
-              { step: "05", title: "Delivery", description: "Ensuring quality results and ongoing support" },
+              {
+                step: "01",
+                title: "Consultation",
+                description: "Understanding your needs and objectives",
+                gradient: "gradient-card-emerald",
+              },
+              {
+                step: "02",
+                title: "Planning",
+                description: "Developing comprehensive project strategies",
+                gradient: "gradient-card-blue",
+              },
+              {
+                step: "03",
+                title: "Execution",
+                description: "Implementing solutions with precision",
+                gradient: "gradient-card-teal",
+              },
+              {
+                step: "04",
+                title: "Evaluation",
+                description: "Evaluating quality results",
+                gradient: "gradient-card-cyan",
+              },
+              {
+                step: "05",
+                title: "Delivery",
+                description: "Ensuring quality results and ongoing support",
+                gradient: "gradient-card-sky",
+              },
             ].map((process, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-red-900 font-bold text-lg">{process.step}</span>
+              <div key={index} className={`${process.gradient} rounded-3xl p-8 text-center hover-lift text-white`}>
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <span className="text-white font-bold text-xl">{process.step}</span>
                 </div>
-                <h3 className="text-white font-semibold mb-2">{process.title}</h3>
-                <p className="text-gray-400 text-sm">{process.description}</p>
+                <h3 className="text-white font-bold text-xl mb-3">{process.title}</h3>
+                <p className="text-white/90 text-sm">{process.description}</p>
               </div>
             ))}
           </div>
@@ -483,29 +368,38 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-300 mb-8">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-emerald-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots-green opacity-50"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <Badge className="bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-6 py-3 text-lg font-semibold mb-8">
+              <Sparkles className="h-5 w-5 mr-2" />
+              Ready to Get Started?
+            </Badge>
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+              <span className="text-gradient">Ready to Get</span> Started?
+            </h2>
+            <p className="text-xl text-gray-700 mb-10">
               Contact us today to discuss how our comprehensive services can help achieve your goals and drive
               sustainable growth for your organization.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-8 py-4 text-lg"
+                  className="bg-gradient-to-r from-blue-500 to-emerald-500 hover:from-blue-600 hover:to-emerald-600 text-white px-10 py-6 text-xl font-bold shadow-2xl"
                 >
+                  <Star className="mr-2 h-6 w-6" />
                   Request Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-6 w-6" />
                 </Button>
               </Link>
               <Link href="/about">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/20 bg-transparent text-white hover:bg-white/10 px-8 py-4 text-lg"
+                  className="border-blue-300 bg-white text-blue-600 hover:bg-blue-50 px-10 py-6 text-xl font-bold"
                 >
                   Learn About Us
                 </Button>
@@ -516,7 +410,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </div>
   )
 }

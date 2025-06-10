@@ -1,31 +1,28 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {  Users, Menu, X, Mail, MapPin, Calendar, Award, Briefcase, GraduationCap, Phone } from "lucide-react"
+import { Users, Mail, MapPin, Calendar, Award, Briefcase, GraduationCap, Phone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/Footer"
+import Header from "@/components/Header"
 
 export default function LeadershipPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
   const directors = [
     {
       name: "Dr. Abdullahi Bello Tiffi",
       role: "Director",
-      email: "tiffibelo@gmail.com",
+      email: "bdullahibarkindo1@gmail.com",
       location: "Bauchi State",
       appointmentDate: "12 MAY 2023",
       gender: "Male",
       nationality: "Nigerian",
-      experience: "15+ years",
-      expertise: ["Strategic Planning", "Business Development", "Operations Management", "Stakeholder Relations"],
-      education: "Bachelor's in Business Administration",
-      bio: "Abdullahi brings over 15 years of extensive experience in business development and strategic planning. His leadership has been instrumental in establishing Mimetic Nigeria Limited as a trusted partner in the contracting and development sector.",
-      image: "/images/Abdullahi_Tiffi.webp", 
+      experience: "10+ years",
+      expertise: ["Strategic Planning", "Software Solutions", "Operations Management", "Project Management"],
+      education: "B.Sc. Computer Science",
+      bio: "Abdullahi is a Computer science professional with experience across government and private sectors. Proven skills in IT solutions, administrative systems, and project coordination. Combines technical expertise with strong communication abilities to deliver efficient systems.",
+      image: "/images/Abdullahi_Tiffi.webp",
     },
     {
       name: "Safiya Bello Tiffi-Lamorde",
@@ -35,124 +32,58 @@ export default function LeadershipPage() {
       appointmentDate: "12 MAY 2023",
       gender: "Female",
       nationality: "Nigerian",
-      experience: "12+ years",
-      expertise: ["Educational Development", "Human Resources", "Project Management", "Community Relations"],
-      education: "Master's in Educational Management",
-      bio: "Safiya is a visionary leader with a passion for educational development and human capacity building. Her expertise in educational management drives our commitment to empowering individuals and institutions across Nigeria.",
-      image: "/images/Safiya_picture.webp", 
+      experience: "20+ years",
+      expertise: ["Customer Service", "Human Resources", "Project Management", "Problem Solving"],
+      education: "Master's in Business Administration (MBA)",
+      bio: "Safiya is a seasoned Commercial Expert with over twenty (20) years experience in the power sector; achieving veritable success in revenue generation, improved profitability and impactful business growth. A skilled administrator / resources manager occupying Senior Management positions for the last ten (10) years.",
+      image: "/images/Safiya_picture.webp",
     },
   ]
 
+
+
   const boardMembers = [
-    {
-      name: "Dr. Baliqees Bello Tiffi",
-      role: "Advisory Board Member",
-      expertise: ["Educational Policy", "Research & Development"],
-      experience: "20+ years in Educational Leadership",
-    },
     {
       name: "Mr. Shamsudeem Aderoju",
       role: "Program Development Advisor",
       expertise: ["Construction Management", "Infrastructure Development"],
-      experience: "18+ years in Programs Co-ordination",
+      experience: "8+ years in Programs Co-ordination",
     },
-    // {
-    //   name: "Mrs. Fatima Aliyu",
-    //   role: "Business Development Advisor",
-    //   expertise: ["Strategic Partnerships", "Market Expansion"],
-    //   experience: "14+ years in Business Development",
-    // },
+    {
+      name: "Mr. Adebayo Samuel Ayodele",
+      role: "Technology Advisory Board Member",
+      expertise: ["Tech Policy & Governance", "Research & Development"],
+      experience: "5+ years in Technology Leadership & Innovation",
+    },
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-950 to-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-             <Link href="/" className="flex items-center space-x-2">
-              <div className="relative w-40 h-14 flex items-center justify-center">
-                <Image
-                  src="/images/logo.webp"
-                  alt="Mimetic Nigeria Limited Logo"
-                  width={160}
-                  height={56}
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </Link>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-white/80 hover:text-white transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="text-white/80 hover:text-white transition-colors">
-                About
-              </Link>
-              <Link href="/services" className="text-white/80 hover:text-white transition-colors">
-                Services
-              </Link>
-              <Link href="/leadership" className="text-white border-b-2 border-red-500">
-                Leadership
-              </Link>
-              <Link href="/contact" className="text-white/80 hover:text-white transition-colors">
-                Contact
-              </Link>
-              <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
-                Get Started
-              </Button>
-            </div>
-
-            <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden bg-black/90 backdrop-blur-md">
-            <div className="px-4 py-4 space-y-4">
-              <Link href="/" className="block text-white/80 hover:text-white transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="block text-white/80 hover:text-white transition-colors">
-                About
-              </Link>
-              <Link href="/services" className="block text-white/80 hover:text-white transition-colors">
-                Services
-              </Link>
-              <Link href="/leadership" className="block text-white">
-                Leadership
-              </Link>
-              <Link href="/contact" className="block text-white/80 hover:text-white transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-        )}
-      </nav>
+      <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+       <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-blue-600 via-cyan-600 to-emerald-600">
+        <div className="absolute inset-0 bg-dots"></div>
         <div className="absolute inset-0">
-          <Image
-            src="/images/leadership-hero.png"
-            alt="Leadership Team"
-            fill
-            className="object-cover opacity-20"
-          />
+          <Image src="/images/leadership-hero.png" alt="Leadership Team" fill className="object-cover opacity-20" />
+          {/* <div className="absolute inset-0 bg-white/70"></div> */}
+        </div>
+
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="bg-gradient-to-r from-red-500/20 to-white/20 text-red-200 border-red-500/30 mb-6">
+          <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 px-4 py-2 text-sm mb-6">
             Leadership Team
           </Badge>
           <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
             Visionary Leaders Driving
-            <span className="bg-gradient-to-r from-red-400 to-white bg-clip-text text-transparent"> Excellence</span>
+            <span className="text-emerald-300 shimmer"> Excellence</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-4xl mx-auto">
             Meet the experienced professionals who guide Mimetic Nigeria Limited&apos;s strategic direction, ensuring
             excellence in every project and sustainable growth across all our business sectors.
           </p>
@@ -160,11 +91,15 @@ export default function LeadershipPage() {
       </section>
 
       {/* Board of Directors */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots-blue opacity-30"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Board of Directors</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Board of Directors</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Our directors bring decades of combined experience in business development, education, and strategic
               leadership to drive our company&apos;s vision forward.
             </p>
@@ -172,64 +107,52 @@ export default function LeadershipPage() {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {directors.map((director, index) => (
-              <Card
-                key={index}
-                className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-              >
-                <CardHeader>
-                  <div className="flex items-start space-x-6">
-                    <div className="relative w-32 h-32 flex-shrink-0">
-                      <Image
-                        src={director.image || "/placeholder.svg"}
-                        alt={director.name}
-                        fill
-                        className="object-cover rounded-full border-4 border-gradient-to-r from-red-500 to-white"
-                        style={{
-                          borderImage: "linear-gradient(45deg, #ef4444, #ffffff) 1",
-                        }}
-                      />
-                      <div className="absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-r from-red-500 to-white p-1">
-                        <div className="w-full h-full rounded-full overflow-hidden">
-                          <Image
-                            src={director.image || "/placeholder.svg"}
-                            alt={director.name}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <CardTitle className="text-white text-2xl mb-2">{director.name}</CardTitle>
-                      <Badge className="bg-red-500/20 text-red-300 border-red-500/30 mb-4">{director.role}</Badge>
-                      <div className="grid grid-cols-2 gap-4 text-sm">
-                        <div className="flex items-center text-gray-400">
-                          <Calendar className="h-4 w-4 mr-2" />
-                          <span>Since {director.appointmentDate.split(" ")[2]}</span>
-                        </div>
-                        <div className="flex items-center text-gray-400">
-                          <Briefcase className="h-4 w-4 mr-2" />
-                          <span>{director.experience}</span>
-                        </div>
+              <div key={index} className="glass-card rounded-xl p-8 hover-lift">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+                  <div className="relative w-40 h-40 flex-shrink-0">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-500 to-blue-600 p-1 shadow-lg shadow-blue-500/20">
+                      <div className="w-full h-full rounded-full overflow-hidden">
+                        <Image
+                          src={director.image || "/placeholder.svg"}
+                          alt={director.name}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-gray-300 leading-relaxed">{director.bio}</p>
+                  <div className="flex-1 text-center md:text-left">
+                    <h3 className="text-gray-900 font-bold text-2xl mb-2">{director.name}</h3>
+                    <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 mb-4">
+                      {director.role}
+                    </Badge>
+                    <div className="grid grid-cols-2 gap-4 text-sm mb-4">
+                      <div className="flex items-center text-gray-600">
+                        <Calendar className="h-4 w-4 mr-2 text-emerald-600" />
+                        <span>Since {director.appointmentDate.split(" ")[2]}</span>
+                      </div>
+                      <div className="flex items-center text-gray-600">
+                        <Briefcase className="h-4 w-4 mr-2 text-emerald-600" />
+                        <span>{director.experience}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 space-y-6">
+                  <p className="text-gray-700 leading-relaxed">{director.bio}</p>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="text-white font-semibold mb-3 flex items-center">
-                        <Award className="h-4 w-4 mr-2 text-red-400" />
+                      <h4 className="text-gray-900 font-semibold mb-3 flex items-center">
+                        <Award className="h-4 w-4 mr-2 text-emerald-600" />
                         Core Expertise
                       </h4>
-                      <div className="space-y-2">
+                      <div className="flex flex-wrap gap-2">
                         {director.expertise.map((skill, idx) => (
                           <Badge
                             key={idx}
-                            variant="outline"
-                            className="text-xs border-red-500/30 text-red-300 mr-2 mb-1"
+                            className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200"
                           >
                             {skill}
                           </Badge>
@@ -238,39 +161,43 @@ export default function LeadershipPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-white font-semibold mb-3 flex items-center">
-                        <GraduationCap className="h-4 w-4 mr-2 text-red-400" />
+                      <h4 className="text-gray-900 font-semibold mb-3 flex items-center">
+                        <GraduationCap className="h-4 w-4 mr-2 text-emerald-600" />
                         Education
                       </h4>
-                      <p className="text-gray-400 text-sm">{director.education}</p>
+                      <p className="text-gray-600">{director.education}</p>
                     </div>
                   </div>
 
-                  <div className="border-t border-white/10 pt-4">
+                  <div className="border-t border-gray-200 pt-4">
                     <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="flex items-center text-gray-400">
-                        <Mail className="h-4 w-4 mr-2 text-red-400" />
+                      <div className="flex items-center text-gray-600">
+                        <Mail className="h-4 w-4 mr-2 text-emerald-600" />
                         <span>{director.email}</span>
                       </div>
-                      <div className="flex items-center text-gray-400">
-                        <MapPin className="h-4 w-4 mr-2 text-red-400" />
+                      <div className="flex items-center text-gray-600">
+                        <MapPin className="h-4 w-4 mr-2 text-emerald-600" />
                         <span>{director.location}</span>
                       </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Advisory Board */}
-      <section className="py-20 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-b from-blue-100 to-green-100 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-30"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Advisory Board</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Advisory Board</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Distinguished professionals who provide strategic guidance and industry expertise to support our continued
               growth and innovation.
             </p>
@@ -278,37 +205,41 @@ export default function LeadershipPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {boardMembers.map((member, index) => (
-              <Card
-                key={index}
-                className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-red-500/20 to-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <Users className="h-10 w-10 text-red-400" />
-                  </div>
-                  <h3 className="text-white font-semibold mb-2 text-lg">{member.name}</h3>
-                  <Badge className="bg-white/10 text-white border-white/20 mb-4">{member.role}</Badge>
-                  <p className="text-gray-400 text-sm mb-4">{member.experience}</p>
-                  <div className="space-y-1">
-                    {member.expertise.map((skill, idx) => (
-                      <Badge key={idx} variant="outline" className="text-xs border-red-500/30 text-red-300 mr-1 mb-1">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={index} className="glass-card rounded-xl p-8 text-center hover-lift">
+                <div className="w-24 h-24 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/10">
+                  <Users className="h-12 w-12 text-emerald-600" />
+                </div>
+                <h3 className="text-gray-900 font-bold text-2xl mb-2">{member.name}</h3>
+                <Badge className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200 mb-4">
+                  {member.role}
+                </Badge>
+                <p className="text-gray-600 mb-4">{member.experience}</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {member.expertise.map((skill, idx) => (
+                    <Badge
+                      key={idx}
+                      className="bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border-emerald-200"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Leadership Philosophy */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots-blue opacity-30"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Leadership Philosophy</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Leadership Philosophy</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               The principles and values that guide our leadership approach and decision-making processes.
             </p>
           </div>
@@ -337,27 +268,26 @@ export default function LeadershipPage() {
                 icon: "📚",
               },
             ].map((principle, index) => (
-              <Card
-                key={index}
-                className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 text-center"
-              >
-                <CardContent className="p-6">
-                  <div className="text-4xl mb-4">{principle.icon}</div>
-                  <h3 className="text-white font-semibold mb-3">{principle.title}</h3>
-                  <p className="text-gray-400 text-sm">{principle.description}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className="glass-card rounded-xl p-6 text-center hover-lift">
+                <div className="text-5xl mb-4">{principle.icon}</div>
+                <h3 className="text-gray-900 font-semibold text-xl mb-3">{principle.title}</h3>
+                <p className="text-gray-600">{principle.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Contact Leadership */}
-      <section className="py-20 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-emerald-600  relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-30"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Connect with Our Leadership Team</h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-white mb-8">
               Our leadership team is committed to building strong relationships with stakeholders, partners, and the
               communities we serve. Reach out to discuss opportunities for collaboration.
             </p>
@@ -365,7 +295,7 @@ export default function LeadershipPage() {
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-8 py-4 text-lg"
+                  className="bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white px-8 py-6 text-lg shadow-lg shadow-blue-500/20"
                 >
                   Schedule a Meeting
                   <Phone className="ml-2 h-5 w-5" />
@@ -375,7 +305,7 @@ export default function LeadershipPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/20 bg-transparent text-white hover:bg-white/10 px-8 py-4 text-lg"
+                  className="border-emerald-200 bg-white text-emerald-700 hover:bg-emerald-50 px-8 py-6 text-lg"
                 >
                   Learn More About Us
                 </Button>
@@ -386,7 +316,7 @@ export default function LeadershipPage() {
       </section>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </div>
   )
 }
