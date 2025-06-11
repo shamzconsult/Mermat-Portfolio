@@ -13,15 +13,15 @@ export default function LeadershipPage() {
     {
       name: "Dr. Abdullahi Bello Tiffi",
       role: "Director",
-      email: "bdullahibarkindo1@gmail.com",
-      location: "Bauchi State",
+      email: "tiffibelo@gmail.com",
+      location: "Plateau State",
       appointmentDate: "12 MAY 2023",
       gender: "Male",
       nationality: "Nigerian",
-      experience: "10+ years",
-      expertise: ["Strategic Planning", "Software Solutions", "Operations Management", "Project Management"],
-      education: "B.Sc. Computer Science",
-      bio: "Abdullahi is a Computer science professional with experience across government and private sectors. Proven skills in IT solutions, administrative systems, and project coordination. Combines technical expertise with strong communication abilities to deliver efficient systems.",
+      experience: "20+ years",
+      expertise: ["Strategic Planning", "Problem Solving", "Research", "Project Management", "Team Leadership"],
+      education: " Veterinary Science",
+      bio: "Abdullahi is a Veterinary research specialist with 29+ years experience at National Veterinary Research Institute. Expert in small ruminant production, animal nutrition, and artificial insemination techniques. Has held multiple sectional head positions including Feedmill, Dairy Production, and Beef Cattle operations.",
       image: "/images/Abdullahi_Tiffi.webp",
     },
     {
@@ -44,9 +44,9 @@ export default function LeadershipPage() {
 
   const boardMembers = [
     {
-      name: "Mr. Shamsudeem Aderoju",
+      name: "Mr. Shamsudeen Aderoju",
       role: "Program Development Advisor",
-      expertise: ["Construction Management", "Infrastructure Development"],
+      expertise: ["Programs & Project Management", "Consultancy and Advisory Services"],
       experience: "8+ years in Programs Co-ordination",
     },
     {
