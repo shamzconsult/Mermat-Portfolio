@@ -93,15 +93,15 @@ export default function ContactPage() {
   const offices = [
     {
       city: "Abuja (Head Office)",
-      address: "7th Avenue, Gwarimpa II, Abuja, FCT",
-      phone: "+234 (0) 123 456 7890",
-      email: "abuja@mimeticnigeria.com",
+      address: "No. 27, 7th Avenue, Gwarimpa II, Abuja, FCT",
+      phone: "+234 (080) 343 953 65",
+      email: "mimeticnigerialimited@gmail.com",
     },
     {
       city: "Bauchi (Branch Office)",
       address: "Victoria Island, Bauchi State",
-      phone: "+234 (0) 987 654 3210",
-      email: "bauchi@mimeticnigeria.com",
+      phone: "+234 (080) 343 953 65",
+      email: "mimeticnigerialimited@gmail.com",
     },
   ]
 
