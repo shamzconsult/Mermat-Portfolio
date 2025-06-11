@@ -15,7 +15,6 @@ import {
   Building,
   Search,
   Heart,
-  Star,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -384,7 +383,6 @@ export default function ServicesPage() {
                   size="lg"
                   className="bg-gradient-to-r from-blue-500 to-emerald-500 hover:from-blue-600 hover:to-emerald-600 text-white px-10 py-6 text-xl font-bold shadow-2xl"
                 >
-                  <Star className="mr-2 h-6 w-6" />
                   Request Consultation
                   <ArrowRight className="ml-2 h-6 w-6" />
                 </Button>

@@ -369,25 +369,27 @@ export default function AboutPage() {
               Join an array of satisfied clients who have experienced the Mimetic difference in quality, reliability,
               and innovative solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md mx-auto">
+              <Link href="/contact" className="w-full">
                 <Button
                   size="lg"
-                  className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                  className="w-full bg-white text-emerald-600 hover:bg-gray-100 px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   Get in Touch <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
-              <Link href="/services">
+
+              <Link href="/services" className="w-full">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white bg-transparent text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm"
+                  className="w-full border-white bg-transparent text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm justify-center"
                 >
                   Explore Services
                 </Button>
               </Link>
             </div>
+
           </div>
         </div>
       </section>
