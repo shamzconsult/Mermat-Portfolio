@@ -295,7 +295,7 @@ export default function LeadershipPage() {
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white px-8 py-6 text-lg shadow-lg shadow-blue-500/20"
+                  className="w-full bg-white text-emerald-600 hover:bg-gray-100 px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   Schedule a Meeting
                   <Phone className="ml-2 h-5 w-5" />
@@ -305,7 +305,7 @@ export default function LeadershipPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-emerald-200 bg-white text-emerald-700 hover:bg-emerald-50 px-8 py-6 text-lg"
+                  className="w-full border-white bg-transparent text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm justify-center"
                 >
                   Learn More About Us
                 </Button>
