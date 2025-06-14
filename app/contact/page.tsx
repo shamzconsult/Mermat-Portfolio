@@ -429,12 +429,12 @@ export default function ContactPage() {
                 {
                   question: "What types of projects do you handle?",
                   answer:
-                    "We handle a wide range of projects including commercial construction, residential development, infrastructure projects, educational programs, and merchandise trading operations across Nigeria.",
+                    "We handle a wide range of projects, including research and development, educational infrastructure projects, educational advocacy programs, curriculum development, and human capacity development projects across Nigeria.",
                 },
                 {
                   question: "How do you ensure project quality?",
                   answer:
-                    "We maintain strict quality control measures, employ certified professionals, use premium materials, and follow international standards while ensuring full compliance with Nigerian regulations.",
+                    "We maintain strict quality control measures, ensure we align with standard monitoring and evaluation protocol,  employ certified professionals, utilize premium materials, and follow international standards while ensuring full compliance with Nigerian regulations for projects and program implementation.",
                 },
                 {
                   question: "What is your typical project timeline?",
@@ -478,7 +478,7 @@ export default function ContactPage() {
                 {
                   question: "Do you work with international partners?",
                   answer:
-                    "Yes, we collaborate with international institutions and organizations to bring global best practices and innovative solutions to our Nigerian clients.",
+                    "Yes, we collaborate with international institutions, development partners, and multinationals to bring global best practices and innovative solutions to our Nigerian clients.",
                 },
               ].map((faq, index) => (
                 <div key={index + 3} className="glass-card rounded-xl overflow-hidden hover-lift">

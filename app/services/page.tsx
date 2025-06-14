@@ -15,6 +15,7 @@ import {
   Building,
   Search,
   Heart,
+  Send,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -163,6 +164,13 @@ export default function ServicesPage() {
       description:
         "For individuals passionate about giving back or building educational impact, we offer partnership opportunities in CSR, scholarship schemes, and strategic philanthropic ventures.",
       gradient: "gradient-card-mint",
+    },
+    {
+      icon: Send,
+      title: "Embassies and Foreign Missions",
+      description:
+        "From our competence in multi-sectoral needs analysis through the deployment of cutting-edge technology to seamless implementation, we work with various embassies and foreign missions to make their intervention seamless.",
+      gradient: "gradient-card-indigo",
     },
   ]
 
